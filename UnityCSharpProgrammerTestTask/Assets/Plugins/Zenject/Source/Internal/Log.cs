@@ -35,7 +35,7 @@ namespace ModestTree
 #if NOT_UNITY3D
             Console.WriteLine(message.Fmt(args));
 #else
-            UnityEngine.Debug.LogWarning(message.Fmt(args));
+            //UnityEngine.Debug.LogWarning(message.Fmt(args));
 #endif
         }
 
