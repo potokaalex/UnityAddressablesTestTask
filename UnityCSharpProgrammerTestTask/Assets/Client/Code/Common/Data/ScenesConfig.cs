@@ -8,5 +8,6 @@ namespace Client.Common.Data
     {
         public AssetReference HubKey;
         public AssetReference MiniGame1Key;
+        public AssetReference MiniGame2Key;
     }
 }

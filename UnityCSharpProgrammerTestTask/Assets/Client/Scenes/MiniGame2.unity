@@ -132,7 +132,7 @@ GameObject:
   m_Component:
   - component: {fileID: 129692834}
   - component: {fileID: 129692836}
-  - component: {fileID: 129692835}
+  - component: {fileID: 129692837}
   m_Layer: 0
   m_Name: Startup
   m_TagString: Untagged
@@ -155,18 +155,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &129692835
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 129692833}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3a2f25ca2b8941429975d07f19245f31, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &129692836
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -181,7 +169,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _scriptableObjectInstallers: []
   _monoInstallers:
-  - {fileID: 129692835}
+  - {fileID: 129692837}
   _installerPrefabs: []
   _autoRun: 1
   OnPreInstall:
@@ -199,6 +187,18 @@ MonoBehaviour:
   _parentNewObjectsUnderSceneContext: 0
   _contractNames: []
   _parentContractNames: []
+--- !u!114 &129692837
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 129692833}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e06a532fcaf644848381cef51d3b561c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &697990599
 GameObject:
   m_ObjectHideFlags: 0
@@ -462,8 +462,8 @@ Camera:
   m_GameObject: {fileID: 963194225}
   m_Enabled: 1
   serializedVersion: 2
-  m_ClearFlags: 1
-  m_BackGroundColor: {r: 0.2627451, g: 0.5647059, b: 0.42414823, a: 0}
+  m_ClearFlags: 2
+  m_BackGroundColor: {r: 0.11523192, g: 0.03484337, b: 0.254717, a: 0}
   m_projectionMatrixMode: 1
   m_GateFitMode: 2
   m_FOVAxisMode: 0

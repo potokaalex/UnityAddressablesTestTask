@@ -51,6 +51,11 @@ MonoBehaviour:
     m_SerializedLabels:
     - Hub
     FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: c73713e62ffd8cb47b1bdbe2ad254d31
+    m_Address: Assets/Client/Scenes/MiniGame2.unity
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
   m_ReadOnly: 0
   m_Settings: {fileID: 11400000, guid: 768834109d633d34b84fd2bb58d213fe, type: 2}
   m_SchemaSet:
