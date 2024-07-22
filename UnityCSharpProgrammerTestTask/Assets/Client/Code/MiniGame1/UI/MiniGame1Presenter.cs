@@ -4,13 +4,13 @@ using Client.Hub.Infrastructure.States;
 using Client.Hub.UI.Buttons;
 using Cysharp.Threading.Tasks;
 
-namespace Client.Hub.UI
+namespace Client.MiniGame1.UI
 {
-    public class HubPresenter : IButtonsHandler
+    public class MiniGame1Presenter : IButtonsHandler
     {
         private readonly IProjectStateMachine _stateMachine;
 
-        public HubPresenter(IProjectStateMachine stateMachine) => _stateMachine = stateMachine;
+        public MiniGame1Presenter(IProjectStateMachine stateMachine) => _stateMachine = stateMachine;
 
         public void Handle(ButtonBase button)
         {
@@ -20,8 +20,8 @@ namespace Client.Hub.UI
 
         private void HandleLoad(LoadButton button)
         {
-            if (button.Type == LoadButtonType.MiniGame1)
-                _stateMachine.SwitchTo<LoadMiniGame1State>().Forget();
+            if (button.Type == LoadButtonType.Hub)
+                _stateMachine.SwitchTo<HubLoadState>().Forget();
         }
     }
 }

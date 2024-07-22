@@ -131,6 +131,8 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 129692834}
+  - component: {fileID: 129692836}
+  - component: {fileID: 129692835}
   m_Layer: 0
   m_Name: Startup
   m_TagString: Untagged
@@ -153,6 +155,50 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &129692835
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 129692833}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3a2f25ca2b8941429975d07f19245f31, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &129692836
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 129692833}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 89715ad69b973a14899afa2c6730b30b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _scriptableObjectInstallers: []
+  _monoInstallers:
+  - {fileID: 129692835}
+  _installerPrefabs: []
+  _autoRun: 1
+  OnPreInstall:
+    m_PersistentCalls:
+      m_Calls: []
+  OnPostInstall:
+    m_PersistentCalls:
+      m_Calls: []
+  OnPreResolve:
+    m_PersistentCalls:
+      m_Calls: []
+  OnPostResolve:
+    m_PersistentCalls:
+      m_Calls: []
+  _parentNewObjectsUnderSceneContext: 0
+  _contractNames: []
+  _parentContractNames: []
 --- !u!1 &697990599
 GameObject:
   m_ObjectHideFlags: 0
@@ -1016,6 +1062,7 @@ GameObject:
   - component: {fileID: 1984074176}
   - component: {fileID: 1984074175}
   - component: {fileID: 1984074174}
+  - component: {fileID: 1984074177}
   m_Layer: 5
   m_Name: LoadHubButton
   m_TagString: Untagged
@@ -1125,6 +1172,19 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1984074172}
   m_CullTransparentMesh: 1
+--- !u!114 &1984074177
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1984074172}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 855535e210d848ab99bc86da8abfa44b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Type: 2
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
