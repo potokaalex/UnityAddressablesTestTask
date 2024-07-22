@@ -1,6 +1,7 @@
 ﻿using Client.Common.Services.AssetLoader;
 using Client.Common.Services.ConfigProvider;
 using Client.Common.Services.SceneLoader;
+using Client.Common.Services.Startup.Runner;
 using Client.Common.Services.StateMachine;
 using Client.Common.Services.StateMachine.Factory;
 using UnityEngine;
@@ -16,9 +17,15 @@ namespace Client.Hub.Infrastructure.Installers
         public override void InstallBindings()
         {
             BindStateMachine();
-            Container.Bind<IAssetLoader>().To<AssetLoader>().AsSingle().WithArguments(_projectConfig);
+            BindAssetLoader();
             Container.Bind<ISceneLoader>().To<SceneLoader>().AsSingle();
             Container.BindInterfacesTo<ConfigProvider>().AsSingle();
+            Container.Bind<IStartupRunner>().To<StartupRunner>().AsSingle();
+        }
+
+        private void BindAssetLoader()
+        {
+            Container.Bind<IAssetLoader>().To<AssetLoader>().AsSingle().WithArguments(_projectConfig);
             Container.BindInterfacesTo<AssetReceiverRegister>().AsSingle();
         }
 

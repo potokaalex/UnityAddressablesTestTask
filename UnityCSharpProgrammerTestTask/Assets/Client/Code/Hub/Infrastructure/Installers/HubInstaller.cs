@@ -14,12 +14,17 @@ namespace Client.Hub.Infrastructure.Installers
         public override void InstallBindings()
         {
             BindStateMachine();
+            BindUI();
+            Container.BindInterfacesTo<AssetReceiverRegister>().AsSingle();
+            Container.BindInterfacesTo<DelayStartupper<HubEnterState>>().AsSingle();
+        }
+
+        private void BindUI()
+        {
             Container.BindInterfacesTo<HubPresenter>().AsSingle();
             Container.BindInterfacesAndSelfTo<HubUIFactory>().AsSingle();
-            Container.BindInterfacesTo<DelayStartupper<HubEnterState>>().AsSingle();
-            Container.BindInterfacesTo<AssetReceiverRegister>().AsSingle();
         }
-        
+
         private void BindStateMachine()
         {
             Container.Bind<IStateFactory>().To<StateFactory>().AsSingle();

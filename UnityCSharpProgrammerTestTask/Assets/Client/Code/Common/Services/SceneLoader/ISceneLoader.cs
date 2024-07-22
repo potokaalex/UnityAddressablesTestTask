@@ -7,6 +7,5 @@ namespace Client.Common.Services.SceneLoader
     public interface ISceneLoader
     {
         UniTask<Scene> LoadSceneAsync(AssetReference key);
-        T FindInScene<T>(string sceneName);
     }
 }
