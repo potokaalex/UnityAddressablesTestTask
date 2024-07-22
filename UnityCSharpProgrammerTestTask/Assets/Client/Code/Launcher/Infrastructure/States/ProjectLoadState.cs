@@ -1,10 +1,9 @@
 ﻿using System.Threading.Tasks;
 using Client.Common.Services.AssetLoader;
 using Client.Common.Services.SceneLoader;
-using Client.Common.Services.Startup;
 using Client.Common.Services.StateMachine;
 using Client.Common.Services.StaticDataProvider;
-using UnityEngine.SceneManagement;
+using Cysharp.Threading.Tasks;
 
 namespace Client.Launcher.Infrastructure.States
 {
@@ -24,15 +23,13 @@ namespace Client.Launcher.Infrastructure.States
         public async void Enter()
         {
             await LoadData();
-            var scene = await LoadScene();
-            _sceneLoader.FindInScene<IStartuper>(scene.name).Startup();
+            await LoadHub();
         }
 
-        private async Task<Scene> LoadScene()
+        private async UniTask LoadHub()
         {
             var hubKey = _staticData.Project.Scenes.HubKey;
-            var scene = await _sceneLoader.LoadSceneAsync(hubKey);
-            return scene;
+            await _sceneLoader.LoadSceneAsync(hubKey);
         }
 
         private async Task LoadData()

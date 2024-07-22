@@ -1,0 +1,9 @@
+﻿//порядок загрузки: projContext -> bootstrapContext -> autoStartupper -> bootstrapState(projectLoadState ?)
+//загружаю данные launcher в момент загрузки игры. Загрузку производить по меткам.
+
+//TODO:
+//загрузка сцен. +
+//загрузка данных. +-
+//автоматический бутстраппер
+//добавить средства debug для stateMachine
+//state machine with unitasks!

@@ -12,7 +12,7 @@ namespace Client.Launcher.Infrastructure.Installers
     public class ProjectInstaller : MonoInstaller
     {
         [SerializeField] private AssetReference _projectConfig;
-        
+
         public override void InstallBindings()
         {
             BindStateMachine();
