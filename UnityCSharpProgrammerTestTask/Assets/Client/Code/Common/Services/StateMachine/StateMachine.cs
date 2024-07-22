@@ -1,5 +1,6 @@
 ﻿using System;
 using Client.Common.Services.StateMachine.Factory;
+using Cysharp.Threading.Tasks;
 
 namespace Client.Common.Services.StateMachine
 {
@@ -19,16 +20,18 @@ namespace Client.Common.Services.StateMachine
         }
 #endif
 
-        public void SwitchTo<T>() where T : IState => SwitchTo(typeof(T));
+        public UniTask SwitchTo<T>() where T : IState => SwitchTo(typeof(T));
 
-        public void SwitchTo(Type type)
+        public async UniTask SwitchTo(Type type)
         {
             DebugOnExit();
-            _currentState?.Exit();
+            if (_currentState != null) 
+                await _currentState.Exit();
+            
             _currentState = _factory.Create(type);
-            DebugOnEnter();
 
-            _currentState.Enter();
+            DebugOnEnter();
+            await _currentState.Enter();
         }
 
         private void DebugOnExit()

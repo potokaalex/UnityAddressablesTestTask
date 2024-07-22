@@ -1,11 +1,10 @@
+using Cysharp.Threading.Tasks;
+
 namespace Client.Common.Services.StateMachine
 {
     public interface IState
     {
-        void Enter();
-
-        void Exit()
-        {
-        }
+        UniTask Enter();
+        UniTask Exit();
     }
 }

@@ -1,5 +1,4 @@
-﻿using System.Threading.Tasks;
-using Client.Common.Services.AssetLoader;
+﻿using Client.Common.Services.AssetLoader;
 using Client.Common.Services.SceneLoader;
 using Client.Common.Services.StateMachine;
 using Client.Common.Services.StaticDataProvider;
@@ -20,11 +19,13 @@ namespace Client.Launcher.Infrastructure.States
             _assetLoader = assetLoader;
         }
 
-        public async void Enter()
+        public async UniTask Enter()
         {
             await LoadData();
             await LoadHub();
         }
+
+        public UniTask Exit() => UniTask.CompletedTask;
 
         private async UniTask LoadHub()
         {
@@ -32,7 +33,7 @@ namespace Client.Launcher.Infrastructure.States
             await _sceneLoader.LoadSceneAsync(hubKey);
         }
 
-        private async Task LoadData()
+        private async UniTask LoadData()
         {
             var projectConfig = await _assetLoader.LoadProject();
             _staticData.Initialize(projectConfig);
