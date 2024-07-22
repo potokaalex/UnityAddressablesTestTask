@@ -7,5 +7,6 @@ namespace Client.Common.Data
     {
         public ScenesConfig Scenes;
         public UIConfig UI;
+        public AssetLabelsConfig Labels;
     }
 }

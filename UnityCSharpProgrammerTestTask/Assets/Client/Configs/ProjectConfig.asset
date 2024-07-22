@@ -14,3 +14,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Scenes: {fileID: 11400000, guid: 34cf60d0b6c36b54984f27755e7924ec, type: 2}
   UI: {fileID: 11400000, guid: a08ab400138efbe4dba472ba14cfc688, type: 2}
+  Labels: {fileID: 11400000, guid: 2375fae9f627e2448ac46653809bc735, type: 2}

@@ -25,8 +25,7 @@ MonoBehaviour:
   - m_GUID: 9fc0d4010bbf28b4594072e72b8655ab
     m_Address: HubScene
     m_ReadOnly: 0
-    m_SerializedLabels:
-    - Hub
+    m_SerializedLabels: []
     FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: 1e07d3bb6b0545f4cb528424a46709d2
     m_Address: MiniGame1Scene

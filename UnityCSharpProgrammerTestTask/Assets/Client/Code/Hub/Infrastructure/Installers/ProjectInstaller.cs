@@ -1,9 +1,8 @@
 ﻿using Client.Common.Services.AssetLoader;
+using Client.Common.Services.ConfigProvider;
 using Client.Common.Services.SceneLoader;
 using Client.Common.Services.StateMachine;
 using Client.Common.Services.StateMachine.Factory;
-using Client.Common.Services.StaticDataProvider;
-using Client.Common.Services.UIFactoryService;
 using UnityEngine;
 using UnityEngine.AddressableAssets;
 using Zenject;
@@ -19,7 +18,8 @@ namespace Client.Hub.Infrastructure.Installers
             BindStateMachine();
             Container.Bind<IAssetLoader>().To<AssetLoader>().AsSingle().WithArguments(_projectConfig);
             Container.Bind<ISceneLoader>().To<SceneLoader>().AsSingle();
-            Container.Bind<IStaticDataProvider>().To<StaticDataProvider>().AsSingle();
+            Container.BindInterfacesTo<ConfigProvider>().AsSingle();
+            Container.BindInterfacesTo<AssetReceiverRegister>().AsSingle();
         }
 
         private void BindStateMachine()
