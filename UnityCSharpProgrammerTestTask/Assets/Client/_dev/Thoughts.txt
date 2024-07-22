@@ -1,6 +1,9 @@
-﻿//порядок загрузки: projContext -> bootstrapContext -> autoStartupper -> bootstrapState(projectLoadState ?)
-//загружаю данные launcher в момент загрузки игры. Загрузку производить по меткам.
+﻿порядок загрузки: (bootstrapLoader) -> projContext -> bootstrapContext -> autoStartupper -> projectLoadState 
+загружаю данные launcher в момент загрузки игры. Загрузку производить по меткам.
 
-//TODO:
-//загрузка сцен. +
-//загрузка данных. +-
+TODO:
+    загрузка данных. +-
+    экраны загрузки.
+
+какие данные мне нужно загружать для hub ?
+эти данные должны участвовать в построении сцены. 
