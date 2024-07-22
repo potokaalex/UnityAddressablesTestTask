@@ -18,32 +18,20 @@ MonoBehaviour:
   m_GUID: f8a8e7f3e43336b4b85a496f9465d0b3
   m_SerializeEntries:
   - m_GUID: dcda8f304dc794e41980b2c3f0020938
-    m_Address: ProjectConfig
+    m_Address: Assets/Client/Configs/ProjectConfig.asset
     m_ReadOnly: 0
-    m_SerializedLabels: []
+    m_SerializedLabels:
+    - Project
     FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: 9fc0d4010bbf28b4594072e72b8655ab
-    m_Address: HubScene
+    m_Address: Assets/Client/Scenes/Hub.unity
     m_ReadOnly: 0
     m_SerializedLabels: []
     FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: 1e07d3bb6b0545f4cb528424a46709d2
-    m_Address: MiniGame1Scene
+    m_Address: Assets/Client/Scenes/MiniGame1.unity
     m_ReadOnly: 0
-    m_SerializedLabels:
-    - MiniGame1
-    FlaggedDuringContentUpdateRestriction: 0
-  - m_GUID: b0f4a52ea93448b4fab543fd4d2be9fc
-    m_Address: Assets/Client/Prefabs/UI/LoadMiniGamePanle/LoadMiniGamePanelButton.prefab
-    m_ReadOnly: 0
-    m_SerializedLabels:
-    - Hub
-    FlaggedDuringContentUpdateRestriction: 0
-  - m_GUID: dc804f25eb9cd244c976060b1744131d
-    m_Address: Assets/Client/Prefabs/UI/LoadMiniGamePanle/LoadMiniGamePanel.prefab
-    m_ReadOnly: 0
-    m_SerializedLabels:
-    - Hub
+    m_SerializedLabels: []
     FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: 1e30c1f2a0eb4a847b17a5399627bd87
     m_Address: Assets/Client/Prefabs/UI/HubCanvas.prefab
@@ -55,6 +43,18 @@ MonoBehaviour:
     m_Address: Assets/Client/Scenes/MiniGame2.unity
     m_ReadOnly: 0
     m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 0810e9628ce7fc640be3bdd7fbaef190
+    m_Address: Assets/Client/Prefabs/UI/LoadingWindow.prefab
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - Project
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: ff639b3c0f4635043b7bbcdf6af86286
+    m_Address: Assets/Client/Prefabs/UI/GlobalCanvas.prefab
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - Project
     FlaggedDuringContentUpdateRestriction: 0
   m_ReadOnly: 0
   m_Settings: {fileID: 11400000, guid: 768834109d633d34b84fd2bb58d213fe, type: 2}

@@ -15,7 +15,7 @@ MonoBehaviour:
   m_DefaultGroup: f8a8e7f3e43336b4b85a496f9465d0b3
   m_currentHash:
     serializedVersion: 2
-    Hash: 3ee4e88ce7d96b08be18675dc40b008c
+    Hash: f767f5124317482a5339a332f96b7d2e
   m_OptimizeCatalogSize: 0
   m_BuildRemoteCatalog: 0
   m_BundleLocalCatalog: 0
@@ -89,6 +89,7 @@ MonoBehaviour:
     - default
     - Hub
     - MiniGame1
+    - Project
   m_SchemaTemplates: []
   m_GroupTemplateObjects:
   - {fileID: 11400000, guid: d70cac18dbd10be48889bf3923a93549, type: 2}

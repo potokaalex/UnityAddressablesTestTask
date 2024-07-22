@@ -1,5 +1,6 @@
 ﻿using Client.Common.Services.StateMachine;
-using Client.Common.UI.Base;
+using Client.Common.UI.Button;
+using Client.Common.UI.Button.Base;
 using Client.Hub.Infrastructure.States;
 using Client.Hub.UI.Buttons;
 using Cysharp.Threading.Tasks;

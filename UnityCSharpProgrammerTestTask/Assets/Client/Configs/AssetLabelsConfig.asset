@@ -12,5 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f4a354ee6bd14069b0bed5c577af3408, type: 3}
   m_Name: AssetLabelsConfig
   m_EditorClassIdentifier: 
-  HubLabel:
+  Project:
+    m_LabelString: Project
+  Hub:
     m_LabelString: Hub

@@ -75,11 +75,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e48e31cf5b1746f298b08205a2f1b8b8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _projectConfig:
-    m_AssetGUID: dcda8f304dc794e41980b2c3f0020938
-    m_SubObjectName: 
-    m_SubObjectType: 
-    m_EditorAssetChanged: 0
+  _projectLabel:
+    m_LabelString: Project
 --- !u!114 &57986310949971705
 MonoBehaviour:
   m_ObjectHideFlags: 0

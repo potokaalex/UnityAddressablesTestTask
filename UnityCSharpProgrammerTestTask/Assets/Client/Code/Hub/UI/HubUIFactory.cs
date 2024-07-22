@@ -1,10 +1,8 @@
 ﻿using Client.Common.Services.AssetLoader;
-using Client.Common.UI;
-using Client.Hub.UI;
 using UnityEngine;
 using Zenject;
 
-namespace Client.Hub.Services
+namespace Client.Hub.UI
 {
     public class HubUIFactory : IAssetReceiver
     {
@@ -25,6 +23,6 @@ namespace Client.Hub.Services
                 _canvasPrefab = prefab;
         }
 
-        private void Create<T>(T prefab) where T : MonoBehaviour, IUIElement => _instantiator.InstantiatePrefabForComponent<T>(prefab);
+        private void Create<T>(T prefab) where T : MonoBehaviour => _instantiator.InstantiatePrefabForComponent<T>(prefab);
     }
 }

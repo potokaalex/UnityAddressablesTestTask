@@ -6,7 +6,6 @@ namespace Client.Common.Data
     public class ProjectConfig : ScriptableObject
     {
         public ScenesConfig Scenes;
-        public UIConfig UI;
         public AssetLabelsConfig Labels;
     }
 }

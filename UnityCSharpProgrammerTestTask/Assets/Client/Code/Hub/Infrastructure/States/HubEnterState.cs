@@ -1,5 +1,5 @@
 ﻿using Client.Common.Services.StateMachine;
-using Client.Hub.Services;
+using Client.Hub.UI;
 using Cysharp.Threading.Tasks;
 
 namespace Client.Hub.Infrastructure.States

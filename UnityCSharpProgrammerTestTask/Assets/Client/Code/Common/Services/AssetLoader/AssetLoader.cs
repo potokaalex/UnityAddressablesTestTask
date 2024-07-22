@@ -1,5 +1,5 @@
-﻿using System.Collections.Generic;
-using Client.Common.Data;
+﻿using System;
+using System.Collections.Generic;
 using Cysharp.Threading.Tasks;
 using UnityEngine.AddressableAssets;
 
@@ -7,18 +7,18 @@ namespace Client.Common.Services.AssetLoader
 {
     public class AssetLoader : IAssetLoader
     {
-        private readonly AssetReference _projectConfig;
         private readonly List<IAssetReceiver> _receivers = new();
+        private readonly AssetLabelReference _projectLabel;
 
-        public AssetLoader(AssetReference projectConfig) => _projectConfig = projectConfig;
+        public AssetLoader(AssetLabelReference projectLabel) => _projectLabel = projectLabel;
 
-        public async UniTask LoadProject()
+        public async UniTask LoadProject() => await LoadAssets(_projectLabel);
+
+        public async UniTask LoadAssets(AssetLabelReference label, Action<float> progressReceiver = null)
         {
-            var asset = await Addressables.LoadAssetAsync<ProjectConfig>(_projectConfig).ToUniTask();
-            CallReceivers(asset);
+            var progress = Progress.Create(progressReceiver);
+            await Addressables.LoadAssetsAsync<object>(label, CallReceivers).ToUniTask(progress: progress);
         }
-
-        public async UniTask LoadAssets(AssetLabelReference label) => await Addressables.LoadAssetsAsync<object>(label, CallReceivers);
 
         public void RegisterReceiver(IAssetReceiver receiver) => _receivers.Add(receiver);
 

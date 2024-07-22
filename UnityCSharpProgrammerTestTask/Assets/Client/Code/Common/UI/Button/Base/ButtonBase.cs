@@ -2,12 +2,12 @@ using UnityEngine;
 using UnityEngine.UI;
 using Zenject;
 
-namespace Client.Common.UI.Base
+namespace Client.Common.UI.Button.Base
 {
-    [RequireComponent(typeof(Image), typeof(Button))]
+    [RequireComponent(typeof(Image), typeof(UnityEngine.UI.Button))]
     public abstract class ButtonBase : MonoBehaviour, IUIElement
     {
-        private Button _button;
+        private UnityEngine.UI.Button _button;
         private IButtonsHandler _handler;
 
         [Inject]
@@ -17,7 +17,7 @@ namespace Client.Common.UI.Base
 
         protected virtual void Awake()
         {
-            _button = GetComponent<Button>();
+            _button = GetComponent<UnityEngine.UI.Button>();
             _button.onClick.AddListener(OnClick);
         }
 

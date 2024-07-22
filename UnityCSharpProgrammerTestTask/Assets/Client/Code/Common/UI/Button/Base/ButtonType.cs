@@ -1,4 +1,4 @@
-namespace Client.Common.UI.Base
+namespace Client.Common.UI.Button.Base
 {
     public enum ButtonType
     {

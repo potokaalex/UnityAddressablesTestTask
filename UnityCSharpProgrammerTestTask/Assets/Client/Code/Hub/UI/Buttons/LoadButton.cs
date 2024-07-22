@@ -1,4 +1,5 @@
-﻿using Client.Common.UI.Base;
+﻿using Client.Common.UI.Button;
+using Client.Common.UI.Button.Base;
 
 namespace Client.Hub.UI.Buttons
 {
