@@ -5,12 +5,12 @@ using Cysharp.Threading.Tasks;
 
 namespace Client.Hub.Infrastructure.States
 {
-    public class LoadMiniGame1State : IState
+    public class MiniGame1LoadState : IState
     {
         private readonly IStaticDataProvider _staticData;
         private readonly ISceneLoader _sceneLoader;
 
-        public LoadMiniGame1State(IStaticDataProvider staticData, ISceneLoader sceneLoader)
+        public MiniGame1LoadState(IStaticDataProvider staticData, ISceneLoader sceneLoader)
         {
             _staticData = staticData;
             _sceneLoader = sceneLoader;
