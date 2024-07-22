@@ -1,4 +1,5 @@
 using Client.Common.Services.StateMachine;
+using Cysharp.Threading.Tasks;
 using Zenject;
 
 namespace Client.Common.Services.Startup
@@ -9,6 +10,6 @@ namespace Client.Common.Services.Startup
 
         public AutoStartupper(IProjectStateMachine stateMachine) => _stateMachine = stateMachine;
 
-        public void Initialize() => _stateMachine.SwitchTo<T>();
+        public void Initialize() => _stateMachine.SwitchTo<T>().Forget();
     }
 }

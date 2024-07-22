@@ -1,5 +1,6 @@
 using System;
 using Client.Common.Services.StateMachine;
+using Cysharp.Threading.Tasks;
 using UnityEngine;
 using Zenject;
 
@@ -17,6 +18,6 @@ namespace Client.Common.Services.Startup
             _stateType = stateType;
         }
 
-        public void Startup() => _stateMachine.SwitchTo(_stateType);
+        public void Startup() => _stateMachine.SwitchTo(_stateType).Forget();
     }
 }

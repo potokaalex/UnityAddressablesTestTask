@@ -1,5 +1,4 @@
 ﻿using Client.Common.Services.AssetLoader;
-using Client.Common.Services.SceneLoader;
 using Client.Common.Services.StateMachine;
 using Client.Common.Services.StaticDataProvider;
 using Cysharp.Threading.Tasks;
@@ -8,31 +7,25 @@ namespace Client.Hub.Infrastructure.States
 {
     public class ProjectLoadState : IState
     {
-        private readonly ISceneLoader _sceneLoader;
         private readonly IStaticDataProvider _staticData;
         private readonly IAssetLoader _assetLoader;
+        private readonly IProjectStateMachine _stateMachine;
 
-        public ProjectLoadState(ISceneLoader sceneLoader, IStaticDataProvider staticData, IAssetLoader assetLoader)
+        public ProjectLoadState(IStaticDataProvider staticData, IAssetLoader assetLoader, IProjectStateMachine stateMachine)
         {
-            _sceneLoader = sceneLoader;
             _staticData = staticData;
             _assetLoader = assetLoader;
+            _stateMachine = stateMachine;
         }
 
         public async UniTask Enter()
         {
             await LoadData();
-            await LoadHub();
+            await _stateMachine.SwitchTo<HubLoadState>();
         }
 
         public UniTask Exit() => UniTask.CompletedTask;
-
-        private async UniTask LoadHub()
-        {
-            var hubKey = _staticData.Project.Scenes.HubKey;
-            await _sceneLoader.LoadSceneAsync(hubKey);
-        }
-
+        
         private async UniTask LoadData()
         {
             var projectConfig = await _assetLoader.LoadProject();
