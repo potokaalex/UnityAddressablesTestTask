@@ -1,5 +1,5 @@
 {
-    "name": "Launcher",
+    "name": "Hub",
     "rootNamespace": "",
     "references": [
         "GUID:d2a92d85638bd3a43accafe25d32ea62",

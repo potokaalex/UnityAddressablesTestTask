@@ -3,10 +3,9 @@
 
 TODO:
     загрузка данных. +-
-    загрузка miniGame1
-    загрузка hub из miniGame1
     rename launcher folder to "Hub"
     стейт загрузки hub
+    загрузка hub из miniGame1
     канвасы как префабы - создание канвасов.
     экраны загрузки.
     

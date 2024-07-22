@@ -1,8 +1,8 @@
 ﻿using Client.Common.Services.Startup;
-using Client.Launcher.Infrastructure.States;
+using Client.Hub.Infrastructure.States;
 using Zenject;
 
-namespace Client.Launcher.Infrastructure.Installers
+namespace Client.Hub.Infrastructure.Installers
 {
     public class BootstrapInstaller : MonoInstaller
     {

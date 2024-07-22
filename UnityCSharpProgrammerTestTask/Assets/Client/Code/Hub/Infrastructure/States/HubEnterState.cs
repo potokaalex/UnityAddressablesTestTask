@@ -1,7 +1,7 @@
 ﻿using Client.Common.Services.StateMachine;
 using Cysharp.Threading.Tasks;
 
-namespace Client.Launcher.Infrastructure.States
+namespace Client.Hub.Infrastructure.States
 {
     public class HubEnterState : IState
     {

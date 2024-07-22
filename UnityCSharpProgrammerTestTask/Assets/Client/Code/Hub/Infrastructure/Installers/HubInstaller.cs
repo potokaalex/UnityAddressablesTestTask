@@ -1,9 +1,9 @@
 ﻿using Client.Common.Services.Startup;
-using Client.Launcher.Infrastructure.States;
-using Client.Launcher.UI;
+using Client.Hub.Infrastructure.States;
+using Client.Hub.UI;
 using Zenject;
 
-namespace Client.Launcher.Infrastructure.Installers
+namespace Client.Hub.Infrastructure.Installers
 {
     public class HubInstaller : MonoInstaller
     {

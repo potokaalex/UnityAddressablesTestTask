@@ -4,7 +4,7 @@ using Client.Common.Services.StateMachine;
 using Client.Common.Services.StaticDataProvider;
 using Cysharp.Threading.Tasks;
 
-namespace Client.Launcher.Infrastructure.States
+namespace Client.Hub.Infrastructure.States
 {
     public class ProjectLoadState : IState
     {

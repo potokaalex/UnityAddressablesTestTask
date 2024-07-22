@@ -1,10 +1,10 @@
 ﻿using Client.Common.Services.StateMachine;
 using Client.Common.UI.Base;
-using Client.Launcher.Infrastructure.States;
-using Client.Launcher.UI.Buttons;
+using Client.Hub.Infrastructure.States;
+using Client.Hub.UI.Buttons;
 using Cysharp.Threading.Tasks;
 
-namespace Client.Launcher.UI
+namespace Client.Hub.UI
 {
     public class HubPresenter : IButtonsHandler
     {

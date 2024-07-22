@@ -7,7 +7,7 @@ using UnityEngine;
 using UnityEngine.AddressableAssets;
 using Zenject;
 
-namespace Client.Launcher.Infrastructure.Installers
+namespace Client.Hub.Infrastructure.Installers
 {
     public class ProjectInstaller : MonoInstaller
     {

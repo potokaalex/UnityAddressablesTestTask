@@ -1,6 +1,6 @@
 ﻿using Client.Common.UI.Base;
 
-namespace Client.Launcher.UI.Buttons
+namespace Client.Hub.UI.Buttons
 {
     public class LoadMiniGameButton : ButtonBase
     {

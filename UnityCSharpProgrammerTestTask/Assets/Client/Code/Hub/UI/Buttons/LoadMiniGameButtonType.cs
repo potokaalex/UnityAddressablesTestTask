@@ -1,4 +1,4 @@
-﻿namespace Client.Launcher.UI.Buttons
+﻿namespace Client.Hub.UI.Buttons
 {
     public enum LoadMiniGameButtonType
     {
