@@ -1,9 +1,9 @@
 ﻿using System;
 using Zenject;
 
-namespace Client.Common.Services.StateMachine
+namespace Client.Common.Services.StateMachine.Factory
 {
-    public class StateFactory
+    public class StateFactory : IStateFactory
     {
         private readonly IInstantiator _container;
 

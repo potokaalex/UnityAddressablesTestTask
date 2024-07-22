@@ -1,14 +1,15 @@
 ﻿using System;
+using Client.Common.Services.StateMachine.Factory;
 
 namespace Client.Common.Services.StateMachine
 {
     public class StateMachine : IProjectStateMachine
     {
-        private readonly StateFactory _factory;
+        private readonly IStateFactory _factory;
         private IState _currentState;
 
 #if !DEBUG_STATE_MACHINE
-        public StateMachine(StateFactory factory) => _factory = factory;
+        public StateMachine(IStateFactory factory) => _factory = factory;
 #else
         private readonly bool _isProject;
         public StateMachine(StateFactory factory, bool isProject = false)
