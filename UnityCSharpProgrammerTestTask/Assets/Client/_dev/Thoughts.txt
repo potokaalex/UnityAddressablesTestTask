@@ -1,10 +1,13 @@
 ﻿порядок загрузки: (bootstrapLoader) -> projContext -> bootstrapContext -> autoStartupper -> projectLoadState 
 загружаю данные launcher в момент загрузки игры. Загрузку производить по меткам.
 загрузка данных: projConfig -> hub -> miniGame1
+зависимости сборок:
+
 
 TODO:
     загрузка данных. +-
-   
+    MiniGame2 sceneDesign
+    загрузка прогресса
     экраны загрузки.
     более точная настройка ссылок на данные в конфигах. Минимальное использование AssetReference.
     
