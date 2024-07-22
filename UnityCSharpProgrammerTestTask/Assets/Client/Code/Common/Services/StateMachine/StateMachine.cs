@@ -12,7 +12,7 @@ namespace Client.Common.Services.StateMachine
         public StateMachine(IStateFactory factory) => _factory = factory;
 #else
         private readonly bool _isProject;
-        public StateMachine(StateFactory factory, bool isProject = false)
+        public StateMachine(IStateFactory factory, bool isProject = false)
         {
             _factory = factory;
             _isProject = isProject;

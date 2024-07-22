@@ -24,7 +24,11 @@ namespace Client.Launcher.Infrastructure.Installers
         private void BindStateMachine()
         {
             Container.Bind<IStateFactory>().To<StateFactory>().AsSingle();
+#if DEBUG_STATE_MACHINE
+            Container.Bind<IProjectStateMachine>().To<StateMachine>().AsSingle().WithArguments(true);
+#else
             Container.Bind<IProjectStateMachine>().To<StateMachine>().AsSingle();
+#endif
         }
     }
 }
