@@ -22,20 +22,35 @@ MonoBehaviour:
     m_ReadOnly: 0
     m_SerializedLabels: []
     FlaggedDuringContentUpdateRestriction: 0
-  - m_GUID: 34cf60d0b6c36b54984f27755e7924ec
-    m_Address: ScenesConfig
-    m_ReadOnly: 0
-    m_SerializedLabels: []
-    FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: 9fc0d4010bbf28b4594072e72b8655ab
     m_Address: HubScene
     m_ReadOnly: 0
-    m_SerializedLabels: []
+    m_SerializedLabels:
+    - Hub
     FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: 1e07d3bb6b0545f4cb528424a46709d2
     m_Address: MiniGame1Scene
     m_ReadOnly: 0
-    m_SerializedLabels: []
+    m_SerializedLabels:
+    - MiniGame1
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: b0f4a52ea93448b4fab543fd4d2be9fc
+    m_Address: Assets/Client/Prefabs/UI/LoadMiniGamePanle/LoadMiniGamePanelButton.prefab
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - Hub
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: dc804f25eb9cd244c976060b1744131d
+    m_Address: Assets/Client/Prefabs/UI/LoadMiniGamePanle/LoadMiniGamePanel.prefab
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - Hub
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 1e30c1f2a0eb4a847b17a5399627bd87
+    m_Address: Assets/Client/Prefabs/UI/HubCanvas.prefab
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - Hub
     FlaggedDuringContentUpdateRestriction: 0
   m_ReadOnly: 0
   m_Settings: {fileID: 11400000, guid: 768834109d633d34b84fd2bb58d213fe, type: 2}

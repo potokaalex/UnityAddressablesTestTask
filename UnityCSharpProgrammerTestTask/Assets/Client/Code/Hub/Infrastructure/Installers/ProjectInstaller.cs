@@ -3,6 +3,7 @@ using Client.Common.Services.SceneLoader;
 using Client.Common.Services.StateMachine;
 using Client.Common.Services.StateMachine.Factory;
 using Client.Common.Services.StaticDataProvider;
+using Client.Common.Services.UIFactoryService;
 using UnityEngine;
 using UnityEngine.AddressableAssets;
 using Zenject;

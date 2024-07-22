@@ -9,8 +9,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1b9b5ebb7f7a4eeeb81a49fc4ac0c3b8, type: 3}
-  m_Name: ProjectConfig
+  m_Script: {fileID: 11500000, guid: f4a354ee6bd14069b0bed5c577af3408, type: 3}
+  m_Name: UIConfig
   m_EditorClassIdentifier: 
-  Scenes: {fileID: 11400000, guid: 34cf60d0b6c36b54984f27755e7924ec, type: 2}
-  UI: {fileID: 11400000, guid: a08ab400138efbe4dba472ba14cfc688, type: 2}
+  HubCanvasPrefab:
+    m_AssetGUID: 1e30c1f2a0eb4a847b17a5399627bd87
+    m_SubObjectName: 
+    m_SubObjectType: 
+    m_EditorAssetChanged: 0

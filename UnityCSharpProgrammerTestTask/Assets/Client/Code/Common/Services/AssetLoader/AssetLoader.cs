@@ -11,5 +11,7 @@ namespace Client.Common.Services.AssetLoader
         public AssetLoader(AssetReference projectConfig) => _projectConfig = projectConfig;
 
         public async UniTask<ProjectConfig> LoadProject() => await Addressables.LoadAssetAsync<ProjectConfig>(_projectConfig).ToUniTask();
+
+        public async UniTask<T> LoadAssetAsync<T>(object key) => await Addressables.LoadAssetAsync<T>(key).ToUniTask();
     }
 }
