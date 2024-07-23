@@ -1,6 +1,6 @@
 ﻿using UniRx;
 
-namespace Client.MiniGame1.Gameplay.Player
+namespace Client.MiniGame1.Gameplay.Player.UI
 {
     public class PlayerModel
     {

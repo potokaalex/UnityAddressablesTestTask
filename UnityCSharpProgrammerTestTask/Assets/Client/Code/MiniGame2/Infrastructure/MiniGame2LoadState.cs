@@ -1,11 +1,10 @@
 ﻿using Client.Common.Services.ConfigProvider;
 using Client.Common.Services.SceneLoader;
 using Client.Common.Services.StateMachine;
-using Client.Common.UI.Factories.Global;
 using Client.Common.UI.Windows.Loading;
 using Cysharp.Threading.Tasks;
 
-namespace Client.Hub.Infrastructure.States
+namespace Client.Code.MiniGame2.Infrastructure
 {
     public class MiniGame2LoadState : IState
     {

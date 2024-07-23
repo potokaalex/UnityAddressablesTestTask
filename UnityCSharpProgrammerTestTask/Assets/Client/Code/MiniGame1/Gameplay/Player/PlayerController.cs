@@ -1,5 +1,6 @@
 ﻿using Client.Common.Services.InputService;
 using Client.MiniGame1.Gameplay.GameplayCamera;
+using Client.MiniGame1.Gameplay.Player.UI;
 using UnityEngine;
 
 namespace Client.MiniGame1.Gameplay.Player

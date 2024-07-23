@@ -7,7 +7,7 @@ using Client.Common.UI.Windows.Loading;
 using Cysharp.Threading.Tasks;
 using UnityEngine.SceneManagement;
 
-namespace Client.Hub.Infrastructure.States
+namespace Client.Common.Infrastructure
 {
     public class HubLoadState : IState
     {

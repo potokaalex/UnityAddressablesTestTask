@@ -1,4 +1,4 @@
-﻿namespace Client.Hub.UI.Buttons
+﻿namespace Client.Common.UI.Button.Load
 {
     public enum LoadButtonType
     {

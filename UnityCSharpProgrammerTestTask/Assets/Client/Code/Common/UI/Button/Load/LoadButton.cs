@@ -1,7 +1,6 @@
-﻿using Client.Common.UI.Button;
-using Client.Common.UI.Button.Base;
+﻿using Client.Common.UI.Button.Base;
 
-namespace Client.Hub.UI.Buttons
+namespace Client.Common.UI.Button.Load
 {
     public class LoadButton : ButtonBase
     {
