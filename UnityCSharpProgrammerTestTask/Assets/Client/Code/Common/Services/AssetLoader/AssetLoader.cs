@@ -7,7 +7,7 @@ namespace Client.Common.Services.AssetLoader
 {
     public class AssetLoader : IAssetLoader
     {
-        private readonly List<IAssetReceiver> _receivers = new();
+        private readonly Dictionary<IAssetReceiver, Type> _receivers = new();
         private readonly AssetLabelReference _projectLabel;
 
         public AssetLoader(AssetLabelReference projectLabel) => _projectLabel = projectLabel;
@@ -20,14 +20,31 @@ namespace Client.Common.Services.AssetLoader
             await Addressables.LoadAssetsAsync<object>(label, CallReceivers).ToUniTask(progress: progress);
         }
 
-        public void RegisterReceiver(IAssetReceiver receiver) => _receivers.Add(receiver);
+        public void RegisterReceiver(IAssetReceiver receiver) => _receivers[receiver] = GetGenericType(receiver);
 
         public void UnRegisterReceiver(IAssetReceiver receiver) => _receivers.Remove(receiver);
 
         private void CallReceivers(object asset)
         {
             foreach (var receiver in _receivers)
-                receiver.Receive(asset);
+            {
+                if (asset.GetType() == receiver.Value)
+                {
+                    var method = receiver.Key.GetType().GetMethod("Receive");
+                    method?.Invoke(receiver.Key, new[] { Convert.ChangeType(asset, receiver.Value) });
+                }
+            }
+        }
+
+        private Type GetGenericType(object instance)
+        {
+            var interfaces = instance.GetType().GetInterfaces();
+
+            foreach (var i in interfaces)
+                if (i.IsGenericType && i.GetGenericTypeDefinition() == typeof(IAssetReceiver<>))
+                    return i.GetGenericArguments()[0];
+
+            return null;
         }
     }
 }

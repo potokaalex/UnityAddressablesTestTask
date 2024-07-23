@@ -1,7 +1,7 @@
 ﻿using Client.Common.Services.ConfigProvider;
 using Zenject;
 
-namespace Client.Common.Services.InputService
+namespace Client.Common.Services.InputService.Factory
 {
     public class InputServiceFactory : IInputServiceFactory
     {

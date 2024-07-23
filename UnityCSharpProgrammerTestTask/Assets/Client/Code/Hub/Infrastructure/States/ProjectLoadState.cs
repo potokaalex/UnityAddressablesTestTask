@@ -1,4 +1,6 @@
 ﻿using Client.Common.Services.AssetLoader;
+using Client.Common.Services.InputService;
+using Client.Common.Services.InputService.Factory;
 using Client.Common.Services.StateMachine;
 using Client.Common.UI.Factories.Global;
 using Cysharp.Threading.Tasks;
@@ -10,18 +12,22 @@ namespace Client.Hub.Infrastructure.States
         private readonly IAssetLoader _assetLoader;
         private readonly IProjectStateMachine _stateMachine;
         private readonly IGlobalUIFactory _uiFactory;
+        private readonly IInputServiceFactory _inputServiceFactory;
 
-        public ProjectLoadState(IAssetLoader assetLoader, IProjectStateMachine stateMachine, IGlobalUIFactory uiFactory)
+        public ProjectLoadState(IAssetLoader assetLoader, IProjectStateMachine stateMachine, IGlobalUIFactory uiFactory,
+            IInputServiceFactory inputServiceFactory)
         {
             _assetLoader = assetLoader;
             _stateMachine = stateMachine;
             _uiFactory = uiFactory;
+            _inputServiceFactory = inputServiceFactory;
         }
 
         public async UniTask Enter()
         {
             await _assetLoader.LoadProject();
             _uiFactory.Initialize();
+            _inputServiceFactory.Create();
             await _stateMachine.SwitchTo<HubLoadState>();
         }
 

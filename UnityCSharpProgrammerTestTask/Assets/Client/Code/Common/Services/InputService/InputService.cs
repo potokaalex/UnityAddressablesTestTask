@@ -8,7 +8,9 @@ namespace Client.Common.Services.InputService
         private bool _leftMouseButtonDown;
 
         public void Initialize(InputServiceObject serviceObject) => _serviceObject = serviceObject;
-        
+
+        public Vector3 MousePosition => Input.mousePosition;
+
         public bool IsMouseButtonDown(MouseType type)
         {
             if (type == MouseType.Left)

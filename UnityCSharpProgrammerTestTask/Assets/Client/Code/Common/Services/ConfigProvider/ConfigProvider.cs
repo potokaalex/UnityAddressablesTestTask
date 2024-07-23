@@ -3,14 +3,10 @@ using Client.Common.Services.AssetLoader;
 
 namespace Client.Common.Services.ConfigProvider
 {
-    public class ConfigProvider : IConfigProvider, IAssetReceiver
+    public class ConfigProvider : IConfigProvider, IAssetReceiver<ProjectConfig>
     {
         public ProjectConfig Project { get; private set; }
 
-        public void Receive(object asset)
-        {
-            if (asset.GetType() == typeof(ProjectConfig))
-                Project = (ProjectConfig)asset;
-        }
+        public void Receive(ProjectConfig asset) => Project = asset;
     }
 }

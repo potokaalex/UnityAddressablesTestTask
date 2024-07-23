@@ -1,4 +1,5 @@
 ﻿using System.Collections.Generic;
+using Client.Common.Services.InputService;
 using Client.Common.UI;
 using Client.Common.UI.Windows.Base;
 using Sirenix.OdinInspector;
@@ -13,5 +14,6 @@ namespace Client.Common.Data
         public AssetLabelsConfig Labels;
         public Dictionary<WindowType, WindowBase> WindowsPrefabs;
         public GlobalCanvas GlobalCanvasPrefab;
+        public InputServiceObject InputServiceObjectPrefab;
     }
 }

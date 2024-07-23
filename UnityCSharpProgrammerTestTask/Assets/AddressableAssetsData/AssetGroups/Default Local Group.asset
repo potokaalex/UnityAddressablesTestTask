@@ -33,16 +33,16 @@ MonoBehaviour:
     m_ReadOnly: 0
     m_SerializedLabels: []
     FlaggedDuringContentUpdateRestriction: 0
-  - m_GUID: 1e30c1f2a0eb4a847b17a5399627bd87
-    m_Address: Assets/Client/Prefabs/UI/HubCanvas.prefab
-    m_ReadOnly: 0
-    m_SerializedLabels:
-    - Hub
-    FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: c73713e62ffd8cb47b1bdbe2ad254d31
     m_Address: Assets/Client/Scenes/MiniGame2.unity
     m_ReadOnly: 0
     m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: e7a0596b1c320cc439b3e4499afc2e3b
+    m_Address: Assets/Client/Configs/HubConfig.asset
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - Hub
     FlaggedDuringContentUpdateRestriction: 0
   m_ReadOnly: 0
   m_Settings: {fileID: 11400000, guid: 768834109d633d34b84fd2bb58d213fe, type: 2}

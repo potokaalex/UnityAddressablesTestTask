@@ -2,6 +2,5 @@
 {
     public interface IAssetReceiver
     {
-        void Receive(object asset);
     }
 }

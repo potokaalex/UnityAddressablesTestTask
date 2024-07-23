@@ -1,5 +1,7 @@
 ﻿using Client.Common.Services.AssetLoader;
 using Client.Common.Services.ConfigProvider;
+using Client.Common.Services.InputService;
+using Client.Common.Services.InputService.Factory;
 using Client.Common.Services.Logger;
 using Client.Common.Services.Logger.Base;
 using Client.Common.Services.SceneLoader;
@@ -17,18 +19,25 @@ namespace Client.Hub.Infrastructure.Installers
     public class ProjectInstaller : MonoInstaller
     {
         [SerializeField] private AssetLabelReference _projectLabel;
-        
+
         public override void InstallBindings()
         {
             BindStateMachine();
             BindAssetLoader();
             BindLog();
-            
+            BindInputService();
+
             Container.Bind<ISceneLoader>().To<SceneLoader>().AsSingle();
             Container.BindInterfacesTo<ConfigProvider>().AsSingle();
             Container.BindInterfacesTo<GlobalUIFactory>().AsSingle();
-            
+
             Container.Bind<IStartupRunner>().To<StartupRunner>().AsSingle();
+        }
+
+        private void BindInputService()
+        {
+            Container.Bind<IInputServiceFactory>().To<InputServiceFactory>().AsSingle();
+            Container.Bind<IInputService>().To<InputService>().AsSingle();
         }
 
         private void BindLog()
