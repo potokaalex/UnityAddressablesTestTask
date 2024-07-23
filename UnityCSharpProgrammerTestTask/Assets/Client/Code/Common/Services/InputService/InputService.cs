@@ -21,6 +21,6 @@ namespace Client.Common.Services.InputService
 
         public bool IsPointerOverGameObject() => _serviceObject.EventSystem.IsPointerOverGameObject();
 
-        private void Update() => _leftMouseButtonDown = Input.GetMouseButton(0);
+        public void OnUpdate() => _leftMouseButtonDown = Input.GetMouseButton(0);
     }
 }

@@ -8,6 +8,7 @@ using Client.Common.Services.SceneLoader;
 using Client.Common.Services.Startup.Runner;
 using Client.Common.Services.StateMachine;
 using Client.Common.Services.StateMachine.Factory;
+using Client.Common.Services.Updater;
 using Client.Common.UI.Factories.Global;
 using UnityEngine;
 using UnityEngine.AddressableAssets;
@@ -30,6 +31,7 @@ namespace Client.Hub.Infrastructure.Installers
             Container.Bind<ISceneLoader>().To<SceneLoader>().AsSingle();
             Container.BindInterfacesTo<ConfigProvider>().AsSingle();
             Container.BindInterfacesTo<GlobalUIFactory>().AsSingle();
+            Container.Bind<IUpdater>().To<Updater>().FromNewComponentOnNewGameObject().AsSingle();
 
             Container.Bind<IStartupRunner>().To<StartupRunner>().AsSingle();
         }

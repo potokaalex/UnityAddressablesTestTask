@@ -32,12 +32,4 @@ namespace Client.MiniGame1.Gameplay.Player
                 _playerModel.Score.Value++;
         }
     }
-
-    public class PlayerFactory
-    {
-        public void Create()
-        {
-            
-        }
-    }
 }

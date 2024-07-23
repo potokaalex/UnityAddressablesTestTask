@@ -7,6 +7,7 @@ TODO:
     загрузка данных. +-
     miniGame1 gameplay
     сохранение и загрузка прогресса.
+    //подытоживание и рефакторинг!
     miniGame1 gameplay
     рефакторинг:
         projectLoadData & configs
