@@ -1,5 +1,6 @@
 ﻿using Client.Common.Services.AssetLoader;
 using Client.Common.Services.Startup;
+using Client.Common.Services.Startup.Delayed;
 using Client.Common.Services.StateMachine;
 using Client.Common.Services.StateMachine.Factory;
 using Client.Hub.Infrastructure.States;
@@ -15,7 +16,7 @@ namespace Client.Hub.Infrastructure.Installers
             BindStateMachine();
             BindUI();
             Container.BindInterfacesTo<AssetReceiverRegister>().AsSingle();
-            Container.BindInterfacesTo<DelayStartupper<HubState>>().AsSingle();
+            Container.BindInterfacesTo<DelayedStartupper<HubState>>().AsSingle();
         }
 
         private void BindUI()

@@ -1,6 +1,7 @@
 ﻿using System;
 using Client.Common.Services.AssetLoader;
 using Client.Common.Services.Startup;
+using Client.Common.Services.Startup.Delayed;
 using Client.Common.Services.StateMachine;
 using Client.Common.Services.StateMachine.Factory;
 using Client.MiniGame1.Gameplay.GameplayCamera;
@@ -23,7 +24,7 @@ namespace Client.MiniGame1.Infrastructure
             Container.BindInterfacesTo<MiniGame1Presenter>().AsSingle();
             Container.BindInterfacesTo<AssetReceiverRegister>().AsSingle();
 
-            Container.BindInterfacesTo<DelayStartupper<MiniGame1State>>().AsSingle();
+            Container.BindInterfacesTo<DelayedStartupper<MiniGame1State>>().AsSingle();
         }
 
         private void BindPlayer()

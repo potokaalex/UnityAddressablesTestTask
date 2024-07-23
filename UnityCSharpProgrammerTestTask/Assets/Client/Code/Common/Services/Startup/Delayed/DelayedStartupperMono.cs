@@ -4,9 +4,9 @@ using Cysharp.Threading.Tasks;
 using UnityEngine;
 using Zenject;
 
-namespace Client.Common.Services.Startup
+namespace Client.Common.Services.Startup.Delayed
 {
-    public class Startupper : MonoBehaviour, IStartuper
+    public class DelayedStartupperMono : MonoBehaviour, IStartuper
     {
         private IStateMachine _stateMachine;
         private Type _stateType;

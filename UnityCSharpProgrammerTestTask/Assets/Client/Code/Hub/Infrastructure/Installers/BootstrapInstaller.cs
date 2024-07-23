@@ -7,6 +7,6 @@ namespace Client.Hub.Infrastructure.Installers
 {
     public class BootstrapInstaller : MonoInstaller
     {
-        public override void InstallBindings() => Container.BindInterfacesTo<AutoStartupperProject<ProjectLoadState>>().AsSingle();
+        public override void InstallBindings() => Container.BindInterfacesTo<AutoStartupperGlobal<ProjectLoadState>>().AsSingle();
     }
 }

@@ -5,11 +5,11 @@ using Zenject;
 
 namespace Client.Common.Services.Startup.Auto
 {
-    public class AutoStartupperProject<T> : IInitializable where T : IState
+    public class AutoStartupperGlobal<T> : IInitializable where T : IState
     {
         private readonly IGlobalStateMachine _stateMachine;
 
-        public AutoStartupperProject(IGlobalStateMachine stateMachine) => _stateMachine = stateMachine;
+        public AutoStartupperGlobal(IGlobalStateMachine stateMachine) => _stateMachine = stateMachine;
 
         public void Initialize() => _stateMachine.SwitchTo<T>().Forget();
     }
