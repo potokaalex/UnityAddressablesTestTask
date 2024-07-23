@@ -3,6 +3,8 @@ using Client.Common.Services.InputService;
 using Client.Common.Services.InputService.Factory;
 using Client.Common.Services.Logger;
 using Client.Common.Services.Logger.Base;
+using Client.Common.Services.ProgressService.Loader;
+using Client.Common.Services.ProgressService.Saver;
 using Client.Common.Services.SceneLoader;
 using Client.Common.Services.Startup.Runner;
 using Client.Common.Services.StateMachine.Factory;
@@ -25,11 +27,18 @@ namespace Client.Hub.Infrastructure.Installers
             BindAssetLoader();
             BindLog();
             BindInputService();
-
+            BindProgress();
+            
             Container.BindInterfacesTo<SceneLoader>().AsSingle();
             Container.BindInterfacesTo<GlobalUIFactory>().AsSingle();
             Container.BindInterfacesTo<Updater>().FromNewComponentOnNewGameObject().AsSingle();
             Container.BindInterfacesTo<StartupRunner>().AsSingle();
+        }
+
+        private void BindProgress()
+        {
+            Container.BindInterfacesTo<ProgressLoader>().AsSingle();
+            Container.BindInterfacesTo<ProgressSaver>().AsSingle();
         }
 
         private void BindInputService()

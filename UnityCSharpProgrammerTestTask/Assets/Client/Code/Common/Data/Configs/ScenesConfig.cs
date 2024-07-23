@@ -2,7 +2,7 @@
 using UnityEngine;
 using UnityEngine.AddressableAssets;
 
-namespace Client.Common.Data
+namespace Client.Common.Data.Configs
 {
     [CreateAssetMenu(menuName = "Configs/Scenes", fileName = "ScenesConfig", order = 0)]
     public class ScenesConfig : SerializedScriptableObject

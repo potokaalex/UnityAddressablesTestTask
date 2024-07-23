@@ -1,4 +1,5 @@
 ﻿using Client.Common.Data;
+using Client.Common.Data.Configs;
 using Client.Common.Services.AssetLoader;
 using Client.Common.UI.Windows.Base;
 using Client.Common.UI.Windows.Loading;

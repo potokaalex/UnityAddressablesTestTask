@@ -1,5 +1,6 @@
 ﻿using System;
 using Client.Common.Data;
+using Client.Common.Data.Configs;
 using Client.Common.Services.AssetLoader;
 using Cysharp.Threading.Tasks;
 using UnityEngine.AddressableAssets;

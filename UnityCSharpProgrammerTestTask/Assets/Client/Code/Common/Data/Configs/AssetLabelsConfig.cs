@@ -4,7 +4,7 @@ using Sirenix.OdinInspector;
 using UnityEngine;
 using UnityEngine.AddressableAssets;
 
-namespace Client.Common.Data
+namespace Client.Common.Data.Configs
 {
     [CreateAssetMenu(menuName = "Configs/AssetLabels", fileName = "AssetLabelsConfig", order = 0)]
     public class AssetLabelsConfig : SerializedScriptableObject

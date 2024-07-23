@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using Client.Common.Data;
+using Client.Common.Data.Configs;
 using Cysharp.Threading.Tasks;
 using UnityEngine.AddressableAssets;
 
