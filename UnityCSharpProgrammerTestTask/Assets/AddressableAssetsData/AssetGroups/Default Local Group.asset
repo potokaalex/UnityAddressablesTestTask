@@ -44,18 +44,6 @@ MonoBehaviour:
     m_ReadOnly: 0
     m_SerializedLabels: []
     FlaggedDuringContentUpdateRestriction: 0
-  - m_GUID: 0810e9628ce7fc640be3bdd7fbaef190
-    m_Address: Assets/Client/Prefabs/UI/LoadingWindow.prefab
-    m_ReadOnly: 0
-    m_SerializedLabels:
-    - Project
-    FlaggedDuringContentUpdateRestriction: 0
-  - m_GUID: ff639b3c0f4635043b7bbcdf6af86286
-    m_Address: Assets/Client/Prefabs/UI/GlobalCanvas.prefab
-    m_ReadOnly: 0
-    m_SerializedLabels:
-    - Project
-    FlaggedDuringContentUpdateRestriction: 0
   m_ReadOnly: 0
   m_Settings: {fileID: 11400000, guid: 768834109d633d34b84fd2bb58d213fe, type: 2}
   m_SchemaSet:

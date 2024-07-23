@@ -30,7 +30,7 @@ namespace Client.Common.UI.Factories.Global
         public LoadingWindow Create()
         {
             var window = CreateWindow(_config.WindowsPrefabs[WindowType.LoadingWindow], _canvas.DefaultElementsRoot);
-            window .Open();
+            window.Open();
             return (LoadingWindow)window;
         }
 
@@ -41,6 +41,8 @@ namespace Client.Common.UI.Factories.Global
         }
 
         public PopupWindow CreatePopup() => (PopupWindow)CreateWindow(_config.WindowsPrefabs[WindowType.Popup], _canvas.DefaultElementsRoot);
+
+        public PopupsWindow CreatePopups() => (PopupsWindow)CreateWindow(_config.WindowsPrefabs[WindowType.Popups], _canvas.DefaultElementsRoot);
 
         public void DestroyPopup(PopupWindow window) => DestroyWindow(window);
 
