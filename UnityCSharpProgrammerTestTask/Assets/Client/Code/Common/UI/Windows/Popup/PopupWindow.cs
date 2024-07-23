@@ -1,6 +1,6 @@
 using System.Collections;
-using Client.Common.UI.Factories;
 using Client.Common.UI.Windows.Base;
+using TMPro;
 using UnityEngine;
 using Zenject;
 
@@ -8,7 +8,7 @@ namespace Client.Common.UI.Windows.Popup
 {
     public class PopupWindow : WindowBase
     {
-        [SerializeField] private TextMesh _text;
+        [SerializeField] private TMP_Text _text;
         private IPopupWindowFactory _windowFactory;
 
         [Inject]

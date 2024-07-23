@@ -23,18 +23,20 @@ namespace Client.Hub.Infrastructure.Installers
             BindStateMachine();
             BindAssetLoader();
             BindLog();
+            
             Container.Bind<ISceneLoader>().To<SceneLoader>().AsSingle();
             Container.BindInterfacesTo<ConfigProvider>().AsSingle();
-            Container.Bind<IStartupRunner>().To<StartupRunner>().AsSingle();
-
             Container.BindInterfacesTo<GlobalUIFactory>().AsSingle();
+            
+            Container.Bind<IStartupRunner>().To<StartupRunner>().AsSingle();
         }
 
         private void BindLog()
         {
             Container.Bind<ILogReceiver>().To<LogReceiver>().AsSingle();
             Container.Bind<ILogHandler>().To<LoggerByPopup>().AsSingle();
-            Container.Bind<LogHandlersRegister>().AsSingle();
+            Container.BindInterfacesTo<AddressablesCustomExceptionHandler>().AsSingle();
+            Container.BindInterfacesTo<LogHandlersRegister>().AsSingle();
         }
 
         private void BindAssetLoader()

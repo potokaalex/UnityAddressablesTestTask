@@ -40,9 +40,9 @@ namespace Client.Common.UI.Factories.Global
             DestroyWindow(window);
         }
 
-        public PopupWindow CreatePopup() => (PopupWindow)CreateWindow(_config.WindowsPrefabs[WindowType.Popup], _canvas.DefaultElementsRoot);
+        public PopupWindow CreatePopup() => (PopupWindow)CreateWindow(_config.WindowsPrefabs[WindowType.Popup], _canvas.TopElementsRoot);
 
-        public PopupsWindow CreatePopups() => (PopupsWindow)CreateWindow(_config.WindowsPrefabs[WindowType.Popups], _canvas.DefaultElementsRoot);
+        public PopupsWindow CreatePopups() => (PopupsWindow)CreateWindow(_config.WindowsPrefabs[WindowType.Popups], _canvas.TopElementsRoot);
 
         public void DestroyPopup(PopupWindow window) => DestroyWindow(window);
 

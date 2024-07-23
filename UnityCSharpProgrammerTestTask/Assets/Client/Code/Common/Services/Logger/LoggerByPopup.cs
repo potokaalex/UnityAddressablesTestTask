@@ -6,14 +6,14 @@ namespace Client.Common.Services.Logger
     public class LoggerByPopup : ILogHandler
     {
         private readonly IPopupWindowFactory _uiFactory;
+        private PopupsWindow _popups;
 
         public LoggerByPopup(IPopupWindowFactory uiFactory) => _uiFactory = uiFactory;
 
         public void Handle(LogData log)
         {
-            //var popups = _uiFactory.CreatePopups();
-            //popups.Add(log.Message);
-            UnityEngine.Debug.Log(log.Message);
+            _popups ??= _uiFactory.CreatePopups();
+            _popups.Add(log.Message);
         }
     }
 }
