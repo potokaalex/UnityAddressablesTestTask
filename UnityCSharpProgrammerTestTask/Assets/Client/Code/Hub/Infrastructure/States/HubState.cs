@@ -4,11 +4,11 @@ using Cysharp.Threading.Tasks;
 
 namespace Client.Hub.Infrastructure.States
 {
-    public class HubEnterState : IState
+    public class HubState : IState
     {
         private readonly HubUIFactory _uiFactory;
 
-        public HubEnterState(HubUIFactory uiFactory) => _uiFactory = uiFactory;
+        public HubState(HubUIFactory uiFactory) => _uiFactory = uiFactory;
 
         public UniTask Enter()
         {

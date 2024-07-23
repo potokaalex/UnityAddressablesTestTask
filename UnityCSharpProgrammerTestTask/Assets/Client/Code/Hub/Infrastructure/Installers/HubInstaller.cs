@@ -15,7 +15,7 @@ namespace Client.Hub.Infrastructure.Installers
             BindStateMachine();
             BindUI();
             Container.BindInterfacesTo<AssetReceiverRegister>().AsSingle();
-            Container.BindInterfacesTo<DelayStartupper<HubEnterState>>().AsSingle();
+            Container.BindInterfacesTo<DelayStartupper<HubState>>().AsSingle();
         }
 
         private void BindUI()

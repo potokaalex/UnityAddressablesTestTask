@@ -7,5 +7,6 @@ namespace Client.Common.Data
     public class AssetLabelsConfig : ScriptableObject
     {
         public AssetLabelReference Hub;
+        public AssetLabelReference MiniGame1;
     }
 }

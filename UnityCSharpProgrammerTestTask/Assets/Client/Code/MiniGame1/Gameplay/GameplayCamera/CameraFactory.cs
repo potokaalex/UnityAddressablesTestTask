@@ -1,16 +1,27 @@
 ﻿using Client.Common.Services.AssetLoader;
-using Client.Common.Services.ConfigProvider;
+using Client.MiniGame1.Data;
 using Zenject;
 
 namespace Client.MiniGame1.Gameplay.GameplayCamera
 {
-    public class CameraFactory : IInitializable
+    public class CameraFactory : IAssetReceiver<MiniGame1Config>
     {
-        public void Initialize() => Create();
+        private readonly IInstantiator _instantiator;
+        private readonly CameraController _cameraController;
+        private MiniGame1Config _config;
 
-        private void Create()
+        public CameraFactory(IInstantiator instantiator, CameraController cameraController)
         {
-            //_configProvider.MiniGame1
+            _instantiator = instantiator;
+            _cameraController = cameraController;
         }
+
+        public void Create()
+        {
+            var instance = _instantiator.InstantiatePrefabForComponent<CameraObject>(_config.CameraPrefab);
+            _cameraController.Initialize(instance);
+        }
+
+        public void Receive(MiniGame1Config asset) => _config = asset;
     }
 }
