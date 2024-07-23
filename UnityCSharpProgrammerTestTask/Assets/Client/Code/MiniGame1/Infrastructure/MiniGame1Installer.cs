@@ -42,8 +42,8 @@ namespace Client.MiniGame1.Infrastructure
         
         private void BindStateMachine()
         {
-            Container.Bind<IStateFactory>().To<StateFactory>().AsSingle();
-            Container.Bind(typeof(IStateMachine), typeof(IDisposable)).To<StateMachine>().AsSingle();
+            Container.BindInterfacesTo<StateFactory>().AsSingle();
+            Container.BindInterfacesTo<StateMachine>().AsSingle();
         }
     }
 }

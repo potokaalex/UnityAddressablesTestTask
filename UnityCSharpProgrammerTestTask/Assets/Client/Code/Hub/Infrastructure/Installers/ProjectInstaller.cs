@@ -29,37 +29,36 @@ namespace Client.Hub.Infrastructure.Installers
             BindLog();
             BindInputService();
 
-            Container.Bind<ISceneLoader>().To<SceneLoader>().AsSingle();
+            Container.BindInterfacesTo<SceneLoader>().AsSingle();
             Container.BindInterfacesTo<ConfigProvider>().AsSingle();
             Container.BindInterfacesTo<GlobalUIFactory>().AsSingle();
-            Container.Bind<IUpdater>().To<Updater>().FromNewComponentOnNewGameObject().AsSingle();
-
-            Container.Bind<IStartupRunner>().To<StartupRunner>().AsSingle();
+            Container.BindInterfacesTo<Updater>().FromNewComponentOnNewGameObject().AsSingle();
+            Container.BindInterfacesTo<StartupRunner>().AsSingle();
         }
 
         private void BindInputService()
         {
-            Container.Bind<IInputServiceFactory>().To<InputServiceFactory>().AsSingle();
-            Container.Bind<IInputService>().To<InputService>().AsSingle();
+            Container.BindInterfacesTo<InputServiceFactory>().AsSingle();
+            Container.BindInterfacesTo<InputService>().AsSingle();
         }
 
         private void BindLog()
         {
-            Container.Bind<ILogReceiver>().To<LogReceiver>().AsSingle();
-            Container.Bind<ILogHandler>().To<LoggerByPopup>().AsSingle();
+            Container.BindInterfacesTo<LogReceiver>().AsSingle();
+            Container.BindInterfacesTo<LoggerByPopup>().AsSingle();
             Container.BindInterfacesTo<AddressablesCustomExceptionHandler>().AsSingle();
             Container.BindInterfacesTo<LogHandlersRegister>().AsSingle();
         }
 
         private void BindAssetLoader()
         {
-            Container.Bind<IAssetLoader>().To<AssetLoader>().AsSingle().WithArguments(_projectLabel);
+            Container.BindInterfacesTo<AssetLoader>().AsSingle().WithArguments(_projectLabel);
             Container.BindInterfacesTo<AssetReceiverRegister>().AsSingle();
         }
 
         private void BindStateMachine()
         {
-            Container.Bind<IStateFactory>().To<StateFactory>().AsSingle();
+            Container.BindInterfacesTo<StateFactory>().AsSingle();
 #if DEBUG_STATE_MACHINE
             Container.BindInterfacesTo<GlobalStateMachine>().AsSingle().WithArguments(true);
 #else

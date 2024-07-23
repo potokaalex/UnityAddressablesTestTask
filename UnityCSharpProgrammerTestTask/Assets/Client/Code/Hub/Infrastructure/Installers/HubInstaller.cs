@@ -26,8 +26,8 @@ namespace Client.Hub.Infrastructure.Installers
 
         private void BindStateMachine()
         {
-            Container.Bind<IStateFactory>().To<StateFactory>().AsSingle();
-            Container.Bind<IStateMachine>().To<StateMachine>().AsSingle();
+            Container.BindInterfacesTo<StateFactory>().AsSingle();
+            Container.BindInterfacesTo<StateMachine>().AsSingle();
         }
     }
 }
