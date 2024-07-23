@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.IO;
 using Client.Common.Data;
+using Client.Common.Data.Progress;
 using Client.Common.Services.Logger.Base;
 using Cysharp.Threading.Tasks;
 using UnityEngine;

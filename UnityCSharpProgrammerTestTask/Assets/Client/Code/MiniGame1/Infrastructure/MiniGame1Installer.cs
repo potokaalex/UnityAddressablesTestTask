@@ -1,4 +1,5 @@
 ﻿using Client.Common.Services.AssetLoader;
+using Client.Common.Services.ProgressService;
 using Client.Common.Services.Startup.Delayed;
 using Client.Common.Services.StateMachine;
 using Client.Common.Services.StateMachine.Factory;
@@ -21,6 +22,7 @@ namespace Client.MiniGame1.Infrastructure
             
             Container.BindInterfacesTo<MiniGame1Presenter>().AsSingle();
             Container.BindInterfacesTo<AssetReceiverRegister>().AsSingle();
+            Container.BindInterfacesTo<ProgressActorsRegister>().AsSingle();
 
             Container.BindInterfacesTo<DelayedStartupper<MiniGame1State>>().AsSingle();
         }
@@ -28,8 +30,8 @@ namespace Client.MiniGame1.Infrastructure
         private void BindPlayer()
         {
             Container.Bind<PlayerController>().AsSingle();
-            Container.Bind<PlayerModel>().AsSingle();
             Container.Bind<PlayerPresenter>().AsSingle();
+            Container.BindInterfacesAndSelfTo<PlayerModel>().AsSingle();
             Container.BindInterfacesAndSelfTo<PlayerFactory>().AsSingle();
         }
 

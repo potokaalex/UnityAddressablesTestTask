@@ -1,4 +1,5 @@
 ﻿using System.IO;
+using Client.Common.Data.Progress;
 using UnityEngine;
 
 namespace Client.Common.Data
