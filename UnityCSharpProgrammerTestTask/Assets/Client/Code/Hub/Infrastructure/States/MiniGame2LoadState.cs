@@ -2,6 +2,7 @@
 using Client.Common.Services.SceneLoader;
 using Client.Common.Services.StateMachine;
 using Client.Common.UI.Factories.Global;
+using Client.Common.UI.Windows.Loading;
 using Cysharp.Threading.Tasks;
 
 namespace Client.Hub.Infrastructure.States
@@ -10,9 +11,9 @@ namespace Client.Hub.Infrastructure.States
     {
         private readonly IConfigProvider _configProvider;
         private readonly ISceneLoader _sceneLoader;
-        private readonly IGlobalUIFactory _uiFactory;
+        private readonly ILoadingWindowFactory _uiFactory;
 
-        public MiniGame2LoadState(IConfigProvider configProvider, ISceneLoader sceneLoader, IGlobalUIFactory uiFactory)
+        public MiniGame2LoadState(IConfigProvider configProvider, ISceneLoader sceneLoader, ILoadingWindowFactory uiFactory)
         {
             _configProvider = configProvider;
             _sceneLoader = sceneLoader;
@@ -21,10 +22,8 @@ namespace Client.Hub.Infrastructure.States
 
         public async UniTask Enter()
         {
-            var loadingWindow = _uiFactory.CreateLoadingWindow();
-            loadingWindow.Open();
-            
-            var key = _configProvider.Configs.Scenes.MiniGame2Key;
+            var loadingWindow = _uiFactory.Create();
+            var key = _configProvider.Project.Scenes.MiniGame2Key;
             await _sceneLoader.LoadSceneAsync(key, f => loadingWindow.SetProgress(f, 0, 1));
             _uiFactory.Destroy(loadingWindow);
         }

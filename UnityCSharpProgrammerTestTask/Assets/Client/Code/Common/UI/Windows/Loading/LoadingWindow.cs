@@ -1,9 +1,8 @@
-﻿using System;
-using Client.Common.UI.Windows.Base;
+﻿using Client.Common.UI.Windows.Base;
 using UnityEngine;
 using UnityEngine.UI;
 
-namespace Client.Common.UI.Windows
+namespace Client.Common.UI.Windows.Loading
 {
     public class LoadingWindow : WindowBase
     {

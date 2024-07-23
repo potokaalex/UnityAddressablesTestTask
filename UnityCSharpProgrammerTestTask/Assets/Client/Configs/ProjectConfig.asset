@@ -12,6 +12,54 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1b9b5ebb7f7a4eeeb81a49fc4ac0c3b8, type: 3}
   m_Name: ProjectConfig
   m_EditorClassIdentifier: 
+  serializationData:
+    SerializedFormat: 2
+    SerializedBytes: 
+    ReferencedUnityObjects:
+    - {fileID: 1445856288530237300, guid: 0810e9628ce7fc640be3bdd7fbaef190, type: 3}
+    SerializedBytesString: 
+    Prefab: {fileID: 0}
+    PrefabModificationsReferencedUnityObjects: []
+    PrefabModifications: []
+    SerializationNodes:
+    - Name: WindowsPrefabs
+      Entry: 7
+      Data: 0|System.Collections.Generic.Dictionary`2[[Client.Common.UI.Windows.Base.WindowType,
+        Common],[Client.Common.UI.Windows.Base.WindowBase, Common]], mscorlib
+    - Name: comparer
+      Entry: 7
+      Data: 1|System.Collections.Generic.EnumEqualityComparer`1[[Client.Common.UI.Windows.Base.WindowType,
+        Common]], mscorlib
+    - Name: 
+      Entry: 12
+      Data: 0
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 12
+      Data: 1
+    - Name: 
+      Entry: 7
+      Data: 
+    - Name: $k
+      Entry: 3
+      Data: 1
+    - Name: $v
+      Entry: 10
+      Data: 0
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
   Scenes: {fileID: 11400000, guid: 34cf60d0b6c36b54984f27755e7924ec, type: 2}
-  UI: {fileID: 11400000, guid: a08ab400138efbe4dba472ba14cfc688, type: 2}
   Labels: {fileID: 11400000, guid: 2375fae9f627e2448ac46653809bc735, type: 2}
+  GlobalCanvasPrefab: {fileID: 3394726782129364329, guid: ff639b3c0f4635043b7bbcdf6af86286, type: 3}

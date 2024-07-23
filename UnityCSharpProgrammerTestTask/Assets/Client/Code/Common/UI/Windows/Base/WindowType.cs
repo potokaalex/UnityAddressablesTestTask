@@ -1,8 +1,9 @@
 namespace Client.Common.UI.Windows.Base
 {
-    //TODO: remove ?
     public enum WindowType
     {
-        LoadingWindow = 1
+        LoadingWindow = 1,
+        Popup = 2,
+        Popups = 3
     }
 }
