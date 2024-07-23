@@ -1,5 +1,5 @@
 ﻿using Client.Common.Data;
-using Client.Common.Services.ConfigProvider;
+using Client.Common.Services.AssetLoader;
 using Client.Common.UI.Windows.Base;
 using Client.Common.UI.Windows.Loading;
 using Client.Common.UI.Windows.Popup;
@@ -8,24 +8,15 @@ using Zenject;
 
 namespace Client.Common.UI.Factories.Global
 {
-    public class GlobalUIFactory : WindowFactoryBase, IGlobalUIFactory, ILoadingWindowFactory, IPopupWindowFactory
+    public class GlobalUIFactory : WindowFactoryBase, IAssetReceiver<ProjectConfig>, IGlobalUIFactory, ILoadingWindowFactory, IPopupWindowFactory
     {
         private readonly IInstantiator _instantiator;
-        private readonly IConfigProvider _configProvider;
         private ProjectConfig _config;
         private GlobalCanvas _canvas;
 
-        public GlobalUIFactory(IInstantiator instantiator, IConfigProvider configProvider)
-        {
-            _instantiator = instantiator;
-            _configProvider = configProvider;
-        }
+        public GlobalUIFactory(IInstantiator instantiator) => _instantiator = instantiator;
 
-        public void Initialize()
-        {
-            _config = _configProvider.Project;
-            _canvas = CreateGlobalCanvas();
-        }
+        public void Initialize() => _canvas = CreateGlobalCanvas();
 
         public LoadingWindow Create()
         {
@@ -51,5 +42,6 @@ namespace Client.Common.UI.Factories.Global
         private T Create<T>(T prefab, Transform root) where T : MonoBehaviour => _instantiator.InstantiatePrefabForComponent<T>(prefab, root);
 
         private protected override WindowBase CreateNewWindow(WindowBase prefab, Transform root) => Create(prefab, root);
+        public void Receive(ProjectConfig asset) => _config = asset;
     }
 }

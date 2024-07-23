@@ -12,7 +12,75 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f4a354ee6bd14069b0bed5c577af3408, type: 3}
   m_Name: AssetLabelsConfig
   m_EditorClassIdentifier: 
-  Hub:
-    m_LabelString: Hub
-  MiniGame1:
-    m_LabelString: MiniGame1
+  serializationData:
+    SerializedFormat: 2
+    SerializedBytes: 
+    ReferencedUnityObjects: []
+    SerializedBytesString: 
+    Prefab: {fileID: 0}
+    PrefabModificationsReferencedUnityObjects: []
+    PrefabModifications: []
+    SerializationNodes:
+    - Name: Keys
+      Entry: 7
+      Data: 0|System.Collections.Generic.Dictionary`2[[Client.Common.Services.AssetLoader.AssetLabel,
+        Common],[UnityEngine.AddressableAssets.AssetLabelReference, Unity.Addressables]],
+        mscorlib
+    - Name: comparer
+      Entry: 7
+      Data: 1|System.Collections.Generic.EnumEqualityComparer`1[[Client.Common.Services.AssetLoader.AssetLabel,
+        Common]], mscorlib
+    - Name: 
+      Entry: 12
+      Data: 0
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 12
+      Data: 2
+    - Name: 
+      Entry: 7
+      Data: 
+    - Name: $k
+      Entry: 3
+      Data: 1
+    - Name: $v
+      Entry: 7
+      Data: 2|UnityEngine.AddressableAssets.AssetLabelReference, Unity.Addressables
+    - Name: m_LabelString
+      Entry: 1
+      Data: Hub
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 
+    - Name: $k
+      Entry: 3
+      Data: 2
+    - Name: $v
+      Entry: 7
+      Data: 3|UnityEngine.AddressableAssets.AssetLabelReference, Unity.Addressables
+    - Name: m_LabelString
+      Entry: 1
+      Data: MiniGame1
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 

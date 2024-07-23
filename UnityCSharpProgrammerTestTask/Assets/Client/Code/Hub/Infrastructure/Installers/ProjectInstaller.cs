@@ -1,12 +1,10 @@
 ﻿using Client.Common.Services.AssetLoader;
-using Client.Common.Services.ConfigProvider;
 using Client.Common.Services.InputService;
 using Client.Common.Services.InputService.Factory;
 using Client.Common.Services.Logger;
 using Client.Common.Services.Logger.Base;
 using Client.Common.Services.SceneLoader;
 using Client.Common.Services.Startup.Runner;
-using Client.Common.Services.StateMachine;
 using Client.Common.Services.StateMachine.Factory;
 using Client.Common.Services.StateMachine.Global;
 using Client.Common.Services.Updater;
@@ -14,7 +12,6 @@ using Client.Common.UI.Factories.Global;
 using UnityEngine;
 using UnityEngine.AddressableAssets;
 using Zenject;
-using ILogHandler = Client.Common.Services.Logger.Base.ILogHandler;
 
 namespace Client.Hub.Infrastructure.Installers
 {
@@ -30,7 +27,6 @@ namespace Client.Hub.Infrastructure.Installers
             BindInputService();
 
             Container.BindInterfacesTo<SceneLoader>().AsSingle();
-            Container.BindInterfacesTo<ConfigProvider>().AsSingle();
             Container.BindInterfacesTo<GlobalUIFactory>().AsSingle();
             Container.BindInterfacesTo<Updater>().FromNewComponentOnNewGameObject().AsSingle();
             Container.BindInterfacesTo<StartupRunner>().AsSingle();
