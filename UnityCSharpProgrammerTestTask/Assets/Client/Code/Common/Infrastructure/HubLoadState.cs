@@ -1,5 +1,4 @@
 ﻿using Client.Common.Services.AssetLoader;
-using Client.Common.Services.ConfigProvider;
 using Client.Common.Services.SceneLoader;
 using Client.Common.Services.Startup.Runner;
 using Client.Common.Services.StateMachine;
@@ -12,16 +11,13 @@ namespace Client.Common.Infrastructure
     public class HubLoadState : IState
     {
         private readonly ISceneLoader _sceneLoader;
-        private readonly IConfigProvider _configProvider;
         private readonly IAssetLoader _assetLoader;
         private readonly IStartupRunner _startupRunner;
         private readonly ILoadingWindowFactory _uiFactory;
 
-        public HubLoadState(ISceneLoader sceneLoader, IConfigProvider configProvider, IAssetLoader assetLoader, IStartupRunner startupRunner,
-            ILoadingWindowFactory uiFactory)
+        public HubLoadState(ISceneLoader sceneLoader, IAssetLoader assetLoader, IStartupRunner startupRunner, ILoadingWindowFactory uiFactory)
         {
             _sceneLoader = sceneLoader;
-            _configProvider = configProvider;
             _assetLoader = assetLoader;
             _startupRunner = startupRunner;
             _uiFactory = uiFactory;
@@ -43,10 +39,7 @@ namespace Client.Common.Infrastructure
         private async UniTask<Scene> LoadScene(LoadingWindow loadingWindow) =>
             await _sceneLoader.LoadSceneAsync(SceneName.Hub, p => loadingWindow.SetProgress(p, 0, 0.5f));
 
-        private async UniTask LoadAssets(LoadingWindow loadingWindow)
-        {
-            var hubLabel = _configProvider.Project.Labels.Hub;
-            await _assetLoader.LoadAssets(hubLabel, p => loadingWindow.SetProgress(p, 0.5f, 1));
-        }
+        private async UniTask LoadAssets(LoadingWindow loadingWindow) =>
+            await _assetLoader.LoadAssets(AssetLabel.Hub, p => loadingWindow.SetProgress(p, 0.5f, 1));
     }
 }

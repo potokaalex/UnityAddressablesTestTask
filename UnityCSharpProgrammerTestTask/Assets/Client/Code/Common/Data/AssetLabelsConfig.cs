@@ -1,16 +1,14 @@
 ﻿using System.Collections.Generic;
 using Client.Common.Services.AssetLoader;
+using Sirenix.OdinInspector;
 using UnityEngine;
 using UnityEngine.AddressableAssets;
 
 namespace Client.Common.Data
 {
     [CreateAssetMenu(menuName = "Configs/AssetLabels", fileName = "AssetLabelsConfig", order = 0)]
-    public class AssetLabelsConfig : ScriptableObject
+    public class AssetLabelsConfig : SerializedScriptableObject
     {
-        public Dictionary<AssetLabel, AssetLabelReference> Labels;
-
-        public AssetLabelReference Hub;
-        public AssetLabelReference MiniGame1;
+        public Dictionary<AssetLabel, AssetLabelReference> Keys;
     }
 }

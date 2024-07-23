@@ -1,24 +1,24 @@
 ﻿using System;
 using System.Collections.Generic;
+using Client.Common.Data;
 using Cysharp.Threading.Tasks;
 using UnityEngine.AddressableAssets;
 
 namespace Client.Common.Services.AssetLoader
 {
-    public class AssetLoader : IAssetLoader
+    public class AssetLoader : IAssetLoader, IAssetReceiver<ProjectConfig>
     {
         private readonly Dictionary<IAssetReceiver, Type> _receivers = new();
         private readonly AssetLabelReference _projectLabel;
+        private ProjectConfig _config;
 
         public AssetLoader(AssetLabelReference projectLabel) => _projectLabel = projectLabel;
 
         public async UniTask LoadProject() => await LoadAssets(_projectLabel);
 
-        public async UniTask LoadAssets(AssetLabel label, Action<float> progressReceiver = null)
-        {
-            
-        }
-        
+        public async UniTask LoadAssets(AssetLabel label, Action<float> progressReceiver = null) =>
+            await LoadAssets(_config.Labels.Keys[label], progressReceiver);
+
         public async UniTask LoadAssets(AssetLabelReference label, Action<float> progressReceiver = null)
         {
             var progress = Progress.Create(progressReceiver);
@@ -28,6 +28,8 @@ namespace Client.Common.Services.AssetLoader
         public void RegisterReceiver(IAssetReceiver receiver) => _receivers[receiver] = GetGenericType(receiver);
 
         public void UnRegisterReceiver(IAssetReceiver receiver) => _receivers.Remove(receiver);
+
+        public void Receive(ProjectConfig asset) => _config = asset;
 
         private void CallReceivers(object asset)
         {
