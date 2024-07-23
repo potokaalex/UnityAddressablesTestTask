@@ -1,11 +1,11 @@
 ﻿using Client.Common.Services.AssetLoader;
-using Client.Hub.Infrastructure.Data;
+using Client.Hub.Data;
 using UnityEngine;
 using Zenject;
 
-namespace Client.Hub.UI
+namespace Client.Hub.UI.Factory
 {
-    public class HubUIFactory : IAssetReceiver<HubConfig>
+    public class HubUIFactory : IAssetReceiver<HubConfig>, IHubUIFactory
     {
         private readonly IInstantiator _instantiator;
         private HubConfig _config;

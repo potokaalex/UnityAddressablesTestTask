@@ -5,6 +5,7 @@ using Client.Common.Services.StateMachine;
 using Client.Common.Services.StateMachine.Factory;
 using Client.Hub.Infrastructure.States;
 using Client.Hub.UI;
+using Client.Hub.UI.Factory;
 using Zenject;
 
 namespace Client.Hub.Infrastructure.Installers
@@ -22,7 +23,7 @@ namespace Client.Hub.Infrastructure.Installers
         private void BindUI()
         {
             Container.BindInterfacesTo<HubPresenter>().AsSingle();
-            Container.BindInterfacesAndSelfTo<HubUIFactory>().AsSingle();
+            Container.BindInterfacesTo<HubUIFactory>().AsSingle();
         }
 
         private void BindStateMachine()
