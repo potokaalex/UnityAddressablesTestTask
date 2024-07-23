@@ -55,11 +55,7 @@ namespace Client.Hub.Infrastructure.Installers
         private void BindStateMachine()
         {
             Container.BindInterfacesTo<StateFactory>().AsSingle();
-#if DEBUG_STATE_MACHINE
-            Container.BindInterfacesTo<GlobalStateMachine>().AsSingle().WithArguments(true);
-#else
             Container.BindInterfacesTo<GlobalStateMachine>().AsSingle();
-#endif
         }
     }
 }
