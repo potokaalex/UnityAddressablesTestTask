@@ -18,16 +18,21 @@ namespace Client.Code.MiniGame2.Infrastructure
         public override void InstallBindings()
         {
             BindStateMachine();
-            Container.BindInterfacesAndSelfTo<PlayerFactory>().AsSingle();
-            Container.Bind<MiniGame2SceneData>().FromInstance(_sceneData).AsSingle();
-
-            Container.BindInterfacesTo<MiniGame2Presenter>().AsSingle();
+            BindPlayer();
             
+            Container.Bind<MiniGame2SceneData>().FromInstance(_sceneData).AsSingle();
+            Container.BindInterfacesTo<MiniGame2Presenter>().AsSingle();
             Container.BindInterfacesTo<AssetReceiverRegister>().AsSingle();
             
             Container.BindInterfacesTo<DelayedStartupper<MiniGame2EnterState>>().AsSingle();
         }
-        
+
+        private void BindPlayer()
+        {
+            Container.BindInterfacesAndSelfTo<PlayerFactory>().AsSingle();
+            Container.BindInterfacesAndSelfTo<PlayerController>().AsSingle();
+        }
+
         private void BindStateMachine()
         {
             Container.BindInterfacesTo<StateFactory>().AsSingle();

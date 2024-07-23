@@ -19,5 +19,7 @@ namespace Client.Common.Services.InputService
         }
 
         public bool IsPointerOverGameObject() => _serviceObject.EventSystem.IsPointerOverGameObject();
+        
+        public bool IsButton(KeyCode keyCode) => Input.GetKey(keyCode);
     }
 }

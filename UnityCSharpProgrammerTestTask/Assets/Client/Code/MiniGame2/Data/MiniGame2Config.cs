@@ -7,5 +7,6 @@ namespace Client.Code.MiniGame2.Data
     public class MiniGame2Config : ScriptableObject
     {
         public PlayerObject PlayerPrefab;
+        public float PlayerMoveSpeed;
     }
 }

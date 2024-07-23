@@ -4,15 +4,15 @@ using Cysharp.Threading.Tasks;
 
 namespace Client.Code.MiniGame2.Infrastructure.States
 {
-    public class MiniGame2EnterState : IState
+    public class MiniGame2ExitState : IState
     {
         private readonly PlayerFactory _playerFactory;
 
-        public MiniGame2EnterState(PlayerFactory playerFactory) => _playerFactory = playerFactory;
+        public MiniGame2ExitState(PlayerFactory playerFactory) => _playerFactory = playerFactory;
 
         public UniTask Enter()
         {
-            _playerFactory.Create();
+            _playerFactory.Destroy();
             return UniTask.CompletedTask;
         }
 

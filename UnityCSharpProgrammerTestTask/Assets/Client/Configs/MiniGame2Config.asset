@@ -13,3 +13,4 @@ MonoBehaviour:
   m_Name: MiniGame2Config
   m_EditorClassIdentifier: 
   PlayerPrefab: {fileID: 1971249699945012108, guid: b21b0b7a37084694d92625b2ce041aef, type: 3}
+  PlayerMoveSpeed: 1
