@@ -8,6 +8,7 @@ using Client.Common.Services.SceneLoader;
 using Client.Common.Services.Startup.Runner;
 using Client.Common.Services.StateMachine;
 using Client.Common.Services.StateMachine.Factory;
+using Client.Common.Services.StateMachine.Global;
 using Client.Common.Services.Updater;
 using Client.Common.UI.Factories.Global;
 using UnityEngine;
@@ -60,9 +61,9 @@ namespace Client.Hub.Infrastructure.Installers
         {
             Container.Bind<IStateFactory>().To<StateFactory>().AsSingle();
 #if DEBUG_STATE_MACHINE
-            Container.Bind<IProjectStateMachine>().To<StateMachine>().AsSingle().WithArguments(true);
+            Container.BindInterfacesTo<GlobalStateMachine>().AsSingle().WithArguments(true);
 #else
-            Container.Bind<IProjectStateMachine>().To<StateMachine>().AsSingle();
+            Container.BindInterfacesTo<GlobalStateMachine>().AsSingle();
 #endif
         }
     }

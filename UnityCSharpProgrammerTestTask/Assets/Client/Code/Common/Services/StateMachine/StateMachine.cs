@@ -4,7 +4,7 @@ using Cysharp.Threading.Tasks;
 
 namespace Client.Common.Services.StateMachine
 {
-    public class StateMachine : IProjectStateMachine, IDisposable
+    public class StateMachine : IStateMachine, IDisposable
     {
         private readonly IStateFactory _factory;
         private IState _currentState;
@@ -12,11 +12,11 @@ namespace Client.Common.Services.StateMachine
 #if !DEBUG_STATE_MACHINE
         public StateMachine(IStateFactory factory) => _factory = factory;
 #else
-        private readonly bool _isProject;
-        public StateMachine(IStateFactory factory, bool isProject = false)
+        private readonly bool _isGlobal;
+        public StateMachine(IStateFactory factory, bool isGlobal = false)
         {
             _factory = factory;
-            _isProject = isProject;
+            _isGlobal = isGlobal;
         }
 #endif
 
@@ -39,7 +39,7 @@ namespace Client.Common.Services.StateMachine
         private void DebugOnExit()
         {
 #if DEBUG_STATE_MACHINE
-            var addition = _isProject ? "-proj" : "";
+            var addition = _isProject ? "-global" : "";
             if (_currentState != null)
                 UnityEngine.Debug.Log($"Exit: {_currentState.GetType().Name}{addition}");
 #endif
@@ -48,7 +48,7 @@ namespace Client.Common.Services.StateMachine
         private void DebugOnEnter()
         {
 #if DEBUG_STATE_MACHINE
-            var addition = _isProject ? "-proj" : "";
+            var addition = _isProject ? "-global" : "";
             UnityEngine.Debug.Log($"Enter: {_currentState.GetType().Name}{addition}");
 #endif
         }

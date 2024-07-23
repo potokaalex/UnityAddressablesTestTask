@@ -1,5 +1,4 @@
 ﻿using Client.Common.Services.AssetLoader;
-using Client.Common.Services.InputService;
 using Client.Common.Services.InputService.Factory;
 using Client.Common.Services.StateMachine;
 using Client.Common.UI.Factories.Global;
@@ -10,11 +9,11 @@ namespace Client.Hub.Infrastructure.States
     public class ProjectLoadState : IState
     {
         private readonly IAssetLoader _assetLoader;
-        private readonly IProjectStateMachine _stateMachine;
+        private readonly IStateMachine _stateMachine;
         private readonly IGlobalUIFactory _uiFactory;
         private readonly IInputServiceFactory _inputServiceFactory;
 
-        public ProjectLoadState(IAssetLoader assetLoader, IProjectStateMachine stateMachine, IGlobalUIFactory uiFactory,
+        public ProjectLoadState(IAssetLoader assetLoader, IStateMachine stateMachine, IGlobalUIFactory uiFactory,
             IInputServiceFactory inputServiceFactory)
         {
             _assetLoader = assetLoader;

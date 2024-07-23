@@ -1,4 +1,5 @@
 ﻿using Client.Common.Services.StateMachine;
+using Client.Common.Services.StateMachine.Global;
 using Client.Common.UI.Button;
 using Client.Common.UI.Button.Base;
 using Client.Hub.Infrastructure.States;
@@ -9,9 +10,9 @@ namespace Client.Code.MiniGame2.UI
 {
     public class MiniGame2Presenter : IButtonsHandler
     {
-        private readonly IProjectStateMachine _stateMachine;
+        private readonly IGlobalStateMachine _stateMachine;
 
-        public MiniGame2Presenter(IProjectStateMachine stateMachine) => _stateMachine = stateMachine;
+        public MiniGame2Presenter(IGlobalStateMachine stateMachine) => _stateMachine = stateMachine;
 
         public void Handle(ButtonBase button)
         {

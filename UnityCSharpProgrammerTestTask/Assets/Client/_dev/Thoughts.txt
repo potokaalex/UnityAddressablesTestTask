@@ -1,11 +1,13 @@
-﻿порядок загрузки: (bootstrapLoader) -> projContext -> bootstrapContext -> autoStartupper -> projectLoadState 
+﻿порядок загрузки: (bootstrapLoader) -> projInstaller -> bootstrapInstaller -> projLoadState -> hubLoadState:
+                  -> miniGame1LoadState
+                  -> miniGame2LoadState
+                  
 загружаю данные launcher в момент загрузки игры. Загрузку производить по меткам.
 загрузка данных: projConfig -> hub -> miniGame1
 зависимости сборок: ...
 
 TODO:
     загрузка данных. +-
-    miniGame1 gameplay
     //подытоживание и рефакторинг!
     сохранение и загрузка прогресса.
     miniGame1 gameplay
@@ -25,3 +27,5 @@ TODO:
         порядок загрузки прогресса 
         объяснение: zenject, stateMachine.
         какие ещё аспекты могут быть непонятны ? 
+
+стейты загрузки находятся в Hub, хочу перенести их в соответствующее assemdef-ы но как это сделать ? 
