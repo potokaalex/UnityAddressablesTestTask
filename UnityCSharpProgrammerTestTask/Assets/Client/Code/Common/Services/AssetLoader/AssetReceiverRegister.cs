@@ -6,10 +6,10 @@ namespace Client.Common.Services.AssetLoader
 {
     public class AssetReceiverRegister : IInitializable, IDisposable
     {
-        private readonly List<IAssetReceiver> _receivers;
+        private readonly List<IAssetReceiverBase> _receivers;
         private readonly IAssetLoader _assetLoader;
 
-        public AssetReceiverRegister(List<IAssetReceiver> receivers, IAssetLoader assetLoader)
+        public AssetReceiverRegister(List<IAssetReceiverBase> receivers, IAssetLoader assetLoader)
         {
             _receivers = receivers;
             _assetLoader = assetLoader;

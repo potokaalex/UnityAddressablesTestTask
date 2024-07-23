@@ -41,7 +41,7 @@ MonoBehaviour:
       Data: 
     - Name: 
       Entry: 12
-      Data: 2
+      Data: 3
     - Name: 
       Entry: 7
       Data: 
@@ -72,6 +72,24 @@ MonoBehaviour:
     - Name: m_LabelString
       Entry: 1
       Data: MiniGame1
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 
+    - Name: $k
+      Entry: 3
+      Data: 3
+    - Name: $v
+      Entry: 7
+      Data: 4|UnityEngine.AddressableAssets.AssetLabelReference, Unity.Addressables
+    - Name: m_LabelString
+      Entry: 1
+      Data: MiniGame2
     - Name: 
       Entry: 8
       Data: 

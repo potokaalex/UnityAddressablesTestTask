@@ -7,10 +7,10 @@ StateMachine используется как локальная машина и 
                               -> переход в локальную машину состояний
 
 
-порядок загрузки: (bootstrapLoader) -> projInstaller -> bootstrapInstaller -> projLoadState -> hubLoadState -> :
-                  -> miniGame1LoadState
+порядок загрузки: (bootstrapLoader) -> projInstaller -> bootstrapInstaller -> projLoadState -> hubLoadState -> (local)HubState ->:
+                  -> miniGame1LoadState -> (local)miniGame1State
                   -> miniGame2LoadState
-
+                  -> (anyWay)projectExitState
 
 Для загрузки ассетов используются сервис AssetLoader, он загружает ассеты по меткам, ссылка на первую метку(Project) передаётся ему через projInstaller
 При загрузке, все заинтересованные буду оповещены через IAssetReceiver<> 
@@ -20,7 +20,8 @@ StateMachine используется как локальная машина и 
 
 
 Система загрузки прогресса тоже использует систему оповещения о загрузке-сохранении прогресса через специальные интерфейсы: IProgressReader, IProgressWriter
-порядок загрузки прогресса:
+порядок загрузки прогресса: miniGame1LoadState(loadProgress) -> miniGame1LoadState(save progress)
+                            (anyWay)projectExitState(save progress) 
 
 
 зависимости сборок: Common: nothing
@@ -30,15 +31,15 @@ StateMachine используется как локальная машина и 
 
 
 TODO:
-    сохранение и загрузка прогресса.
-    miniGame1 gameplay
+    miniGame2 gameplay
     кнопки выгрузки!
     тесты работы
     тесты производительности
     рефакторинг:
+        зачем я создаю фабрику ?
         проверить на использование System.Task
         cleanup
         проход по предупреждениям.
     документирование:
         порядок загрузки прогресса 
-        какие ещё аспекты могут быть непонятны ? 
+        организация папок, нейминг.

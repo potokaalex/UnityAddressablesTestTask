@@ -9,7 +9,7 @@ namespace Client.Common.Services.AssetLoader
 {
     public class AssetLoader : IAssetLoader, IAssetReceiver<ProjectConfig>
     {
-        private readonly Dictionary<IAssetReceiver, Type> _receivers = new();
+        private readonly Dictionary<IAssetReceiverBase, Type> _receivers = new();
         private readonly AssetLabelReference _projectLabel;
         private ProjectConfig _config;
 
@@ -26,9 +26,9 @@ namespace Client.Common.Services.AssetLoader
             await Addressables.LoadAssetsAsync<object>(label, CallReceivers).ToUniTask(progress: progress);
         }
 
-        public void RegisterReceiver(IAssetReceiver receiver) => _receivers[receiver] = GetGenericType(receiver);
+        public void RegisterReceiver(IAssetReceiverBase receiver) => _receivers[receiver] = GetGenericType(receiver);
 
-        public void UnRegisterReceiver(IAssetReceiver receiver) => _receivers.Remove(receiver);
+        public void UnRegisterReceiver(IAssetReceiverBase receiver) => _receivers.Remove(receiver);
 
         public void Receive(ProjectConfig asset) => _config = asset;
 

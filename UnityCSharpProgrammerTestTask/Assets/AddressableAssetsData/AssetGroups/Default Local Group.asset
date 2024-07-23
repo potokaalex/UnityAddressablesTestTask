@@ -50,6 +50,12 @@ MonoBehaviour:
     m_SerializedLabels:
     - MiniGame1
     FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 767fdca35a90c7b4a8be1de3e84199c0
+    m_Address: Assets/Client/Configs/MiniGame2Config.asset
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - MiniGame2
+    FlaggedDuringContentUpdateRestriction: 0
   m_ReadOnly: 0
   m_Settings: {fileID: 11400000, guid: 768834109d633d34b84fd2bb58d213fe, type: 2}
   m_SchemaSet:
