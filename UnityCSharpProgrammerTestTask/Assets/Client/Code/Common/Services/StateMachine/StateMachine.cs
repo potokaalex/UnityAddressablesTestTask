@@ -4,7 +4,7 @@ using Cysharp.Threading.Tasks;
 
 namespace Client.Common.Services.StateMachine
 {
-    public class StateMachine : IProjectStateMachine
+    public class StateMachine : IProjectStateMachine, IDisposable
     {
         private readonly IStateFactory _factory;
         private IState _currentState;
@@ -25,14 +25,16 @@ namespace Client.Common.Services.StateMachine
         public async UniTask SwitchTo(Type type)
         {
             DebugOnExit();
-            if (_currentState != null) 
+            if (_currentState != null)
                 await _currentState.Exit();
-            
+
             _currentState = _factory.Create(type);
 
             DebugOnEnter();
             await _currentState.Enter();
         }
+
+        public void Dispose() => _currentState?.Exit();
 
         private void DebugOnExit()
         {

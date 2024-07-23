@@ -5,8 +5,8 @@ namespace Client.MiniGame1.Gameplay.GameplayCamera
 {
     public class CameraController
     {
-        private CameraObject _cameraObject;
         private readonly IInputService _inputService;
+        private CameraObject _cameraObject;
 
         public CameraController(IInputService inputService) => _inputService = inputService;
 

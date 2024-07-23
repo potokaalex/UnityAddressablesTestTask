@@ -24,7 +24,6 @@ namespace Client.Common.Services.InputService.Factory
             var prefab = _configProvider.Project.InputServiceObjectPrefab;
             var instance = _instantiator.InstantiatePrefabForComponent<InputServiceObject>(prefab);
             _inputService.Initialize(instance);
-            _updater.OnUpdate += _inputService.OnUpdate;
         }
     }
 }

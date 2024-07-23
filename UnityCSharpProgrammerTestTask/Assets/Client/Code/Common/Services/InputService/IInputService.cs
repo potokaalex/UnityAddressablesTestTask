@@ -8,6 +8,5 @@ namespace Client.Common.Services.InputService
         bool IsMouseButtonDown(MouseType type);
         bool IsPointerOverGameObject();
         void Initialize(InputServiceObject serviceObject);
-        void OnUpdate();
     }
 }

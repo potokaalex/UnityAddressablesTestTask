@@ -22,3 +22,4 @@ MonoBehaviour:
     PrefabModifications: []
     SerializationNodes: []
   CameraPrefab: {fileID: 923641521408446345, guid: 57b0b464c1a665341a862cc1adf69314, type: 3}
+  PlayerCanvasPrefab: {fileID: 7437116056256560648, guid: 68c5fb6a1c22598439c3a44dd74f8202, type: 3}

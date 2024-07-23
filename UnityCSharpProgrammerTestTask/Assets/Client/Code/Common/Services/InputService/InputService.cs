@@ -5,7 +5,6 @@ namespace Client.Common.Services.InputService
     public class InputService : IInputService
     {
         private InputServiceObject _serviceObject;
-        private bool _leftMouseButtonDown;
 
         public void Initialize(InputServiceObject serviceObject) => _serviceObject = serviceObject;
 
@@ -13,14 +12,12 @@ namespace Client.Common.Services.InputService
 
         public bool IsMouseButtonDown(MouseType type)
         {
-            if (type == MouseType.Left)
-                return _leftMouseButtonDown;
+            if(type == MouseType.Left)
+                return Input.GetMouseButtonDown(0);
 
             return false;
         }
 
         public bool IsPointerOverGameObject() => _serviceObject.EventSystem.IsPointerOverGameObject();
-
-        public void OnUpdate() => _leftMouseButtonDown = Input.GetMouseButton(0);
     }
 }

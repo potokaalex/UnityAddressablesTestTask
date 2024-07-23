@@ -1,9 +1,11 @@
-﻿using Client.Common.Services.AssetLoader;
+﻿using System;
+using Client.Common.Services.AssetLoader;
 using Client.Common.Services.Startup;
 using Client.Common.Services.StateMachine;
 using Client.Common.Services.StateMachine.Factory;
 using Client.MiniGame1.Gameplay.GameplayCamera;
 using Client.MiniGame1.Gameplay.Player;
+using Client.MiniGame1.Gameplay.Player.UI;
 using Client.MiniGame1.Infrastructure.States;
 using Client.MiniGame1.UI;
 using Zenject;
@@ -28,6 +30,8 @@ namespace Client.MiniGame1.Infrastructure
         {
             Container.Bind<PlayerController>().AsSingle();
             Container.Bind<PlayerModel>().AsSingle();
+            Container.Bind<PlayerPresenter>().AsSingle();
+            Container.BindInterfacesAndSelfTo<PlayerFactory>().AsSingle();
         }
 
         private void BindCamera()
@@ -39,7 +43,7 @@ namespace Client.MiniGame1.Infrastructure
         private void BindStateMachine()
         {
             Container.Bind<IStateFactory>().To<StateFactory>().AsSingle();
-            Container.Bind<IStateMachine>().To<StateMachine>().AsSingle();
+            Container.Bind(typeof(IStateMachine), typeof(IDisposable)).To<StateMachine>().AsSingle();
         }
     }
 }
