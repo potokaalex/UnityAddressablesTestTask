@@ -30,7 +30,7 @@ namespace Client.Common.Infrastructure
         public async UniTask Enter()
         {
             var loadingWindow = _uiFactory.Create();
-            
+
             var scene = await LoadScene(loadingWindow);
             await LoadAssets(loadingWindow);
 
@@ -40,11 +40,8 @@ namespace Client.Common.Infrastructure
 
         public UniTask Exit() => UniTask.CompletedTask;
 
-        private async UniTask<Scene> LoadScene(LoadingWindow loadingWindow)
-        {
-            var hubKey = _configProvider.Project.Scenes.HubKey;
-            return await _sceneLoader.LoadSceneAsync(hubKey, p => loadingWindow.SetProgress(p, 0, 0.5f));
-        }
+        private async UniTask<Scene> LoadScene(LoadingWindow loadingWindow) =>
+            await _sceneLoader.LoadSceneAsync(SceneName.Hub, p => loadingWindow.SetProgress(p, 0, 0.5f));
 
         private async UniTask LoadAssets(LoadingWindow loadingWindow)
         {

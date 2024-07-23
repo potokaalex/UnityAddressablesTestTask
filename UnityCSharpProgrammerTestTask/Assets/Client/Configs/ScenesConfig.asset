@@ -12,17 +12,26 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 46529cc0e83a4d739bc94f1a1c85f380, type: 3}
   m_Name: ScenesConfig
   m_EditorClassIdentifier: 
-  HubKey:
+  serializationData:
+    SerializedFormat: 2
+    SerializedBytes: 
+    ReferencedUnityObjects: []
+    SerializedBytesString: 
+    Prefab: {fileID: 0}
+    PrefabModificationsReferencedUnityObjects: []
+    PrefabModifications: []
+    SerializationNodes: []
+  Hub:
     m_AssetGUID: 9fc0d4010bbf28b4594072e72b8655ab
     m_SubObjectName: 
     m_SubObjectType: 
     m_EditorAssetChanged: 0
-  MiniGame1Key:
+  MiniGame1:
     m_AssetGUID: 1e07d3bb6b0545f4cb528424a46709d2
     m_SubObjectName: 
     m_SubObjectType: 
     m_EditorAssetChanged: 0
-  MiniGame2Key:
+  MiniGame2:
     m_AssetGUID: c73713e62ffd8cb47b1bdbe2ad254d31
     m_SubObjectName: 
     m_SubObjectType: 

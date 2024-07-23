@@ -14,6 +14,11 @@ namespace Client.Common.Services.AssetLoader
 
         public async UniTask LoadProject() => await LoadAssets(_projectLabel);
 
+        public async UniTask LoadAssets(AssetLabel label, Action<float> progressReceiver = null)
+        {
+            
+        }
+        
         public async UniTask LoadAssets(AssetLabelReference label, Action<float> progressReceiver = null)
         {
             var progress = Progress.Create(progressReceiver);

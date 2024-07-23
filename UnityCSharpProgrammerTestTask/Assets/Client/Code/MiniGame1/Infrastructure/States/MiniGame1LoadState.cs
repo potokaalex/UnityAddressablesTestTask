@@ -18,7 +18,7 @@ namespace Client.MiniGame1.Infrastructure.States
         private readonly IStartupRunner _startupRunner;
 
         public MiniGame1LoadState(IConfigProvider configProvider, ISceneLoader sceneLoader, ILoadingWindowFactory uiFactory,
-            IAssetLoader assetLoader,IStartupRunner startupRunner)
+            IAssetLoader assetLoader, IStartupRunner startupRunner)
         {
             _configProvider = configProvider;
             _sceneLoader = sceneLoader;
@@ -42,11 +42,8 @@ namespace Client.MiniGame1.Infrastructure.States
             await _assetLoader.LoadAssets(label, f => loadingWindow.SetProgress(f, 0.5f, 1));
         }
 
-        private async UniTask<Scene> LoadScene(LoadingWindow loadingWindow)
-        {
-            var key = _configProvider.Project.Scenes.MiniGame1Key;
-            return await _sceneLoader.LoadSceneAsync(key, f => loadingWindow.SetProgress(f, 0, 0.5f));
-        }
+        private async UniTask<Scene> LoadScene(LoadingWindow loadingWindow) =>
+            await _sceneLoader.LoadSceneAsync(SceneName.MiniGame1, f => loadingWindow.SetProgress(f, 0, 0.5f));
 
         public UniTask Exit() => UniTask.CompletedTask;
     }
