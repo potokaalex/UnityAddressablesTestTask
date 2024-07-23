@@ -89,3 +89,4 @@ MonoBehaviour:
   Scenes: {fileID: 11400000, guid: 34cf60d0b6c36b54984f27755e7924ec, type: 2}
   Labels: {fileID: 11400000, guid: 2375fae9f627e2448ac46653809bc735, type: 2}
   GlobalCanvasPrefab: {fileID: 3394726782129364329, guid: ff639b3c0f4635043b7bbcdf6af86286, type: 3}
+  InputServiceObjectPrefab: {fileID: 2084397676585099346, guid: 4c465678bc5391144a11cad52a70978c, type: 3}
