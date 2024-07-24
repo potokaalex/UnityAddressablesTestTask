@@ -201,6 +201,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _sceneData:
     PlayerSpawnPoint: {fileID: 1271816695}
+    UICanvas: {fileID: 1785370321}
 --- !u!1 &352464701
 GameObject:
   m_ObjectHideFlags: 0
@@ -889,7 +890,7 @@ GameObject:
   - component: {fileID: 1785370319}
   - component: {fileID: 1785370318}
   m_Layer: 5
-  m_Name: InfrastructureCanvas
+  m_Name: UICanvas
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -911,7 +912,7 @@ MonoBehaviour:
   m_BlockingObjects: 0
   m_BlockingMask:
     serializedVersion: 2
-    m_Bits: 4294967295
+    m_Bits: 55
 --- !u!114 &1785370319
 MonoBehaviour:
   m_ObjectHideFlags: 0

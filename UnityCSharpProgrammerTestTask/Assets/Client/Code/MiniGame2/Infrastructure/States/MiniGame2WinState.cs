@@ -7,6 +7,7 @@ namespace Client.Code.MiniGame2.Infrastructure.States
     {
         public UniTask Enter()
         {
+            //как засечь время до события ? Нужен таймер. Нужно создать таймер.
             UnityEngine.Debug.Log("win");
             return UniTask.CompletedTask;
         }

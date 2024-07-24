@@ -3,7 +3,7 @@ using Client.Common.Services.AssetLoader;
 using Client.Common.Services.InputService;
 using UnityEngine;
 
-namespace Client.Code.MiniGame2.Gameplay
+namespace Client.Code.MiniGame2.Gameplay.Player
 {
     public class PlayerController : IAssetReceiver<MiniGame2Config>
     {

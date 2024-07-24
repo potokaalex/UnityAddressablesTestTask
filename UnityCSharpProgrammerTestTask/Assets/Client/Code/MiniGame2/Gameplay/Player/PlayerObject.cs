@@ -1,6 +1,6 @@
 ﻿using UnityEngine;
 
-namespace Client.Code.MiniGame2.Gameplay
+namespace Client.Code.MiniGame2.Gameplay.Player
 {
     public class PlayerObject : MonoBehaviour
     {

@@ -1,4 +1,5 @@
 ﻿using Client.Code.MiniGame2.Gameplay;
+using Client.Code.MiniGame2.Gameplay.Player;
 using Client.Common.Services.StateMachine;
 using Cysharp.Threading.Tasks;
 

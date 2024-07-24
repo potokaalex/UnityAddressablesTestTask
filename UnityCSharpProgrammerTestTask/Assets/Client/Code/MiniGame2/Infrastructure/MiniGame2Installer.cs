@@ -1,5 +1,5 @@
 ﻿using Client.Code.MiniGame2.Data;
-using Client.Code.MiniGame2.Gameplay;
+using Client.Code.MiniGame2.Gameplay.Player;
 using Client.Code.MiniGame2.Infrastructure.States;
 using Client.Code.MiniGame2.UI;
 using Client.Common.Services.AssetLoader;
@@ -31,6 +31,7 @@ namespace Client.Code.MiniGame2.Infrastructure
         {
             Container.BindInterfacesAndSelfTo<PlayerFactory>().AsSingle();
             Container.BindInterfacesAndSelfTo<PlayerController>().AsSingle();
+            Container.BindInterfacesAndSelfTo<PlayerTimer>().AsSingle();
         }
 
         private void BindStateMachine()

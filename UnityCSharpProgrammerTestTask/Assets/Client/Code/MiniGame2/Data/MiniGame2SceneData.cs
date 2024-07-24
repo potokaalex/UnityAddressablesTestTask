@@ -7,5 +7,6 @@ namespace Client.Code.MiniGame2.Data
     public class MiniGame2SceneData
     {
         public Transform PlayerSpawnPoint;
+        public Transform UICanvas;
     }
 }
