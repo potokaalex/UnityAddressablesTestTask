@@ -20,7 +20,7 @@ namespace Client.Common.Services.AssetLoader
             _logReceiver = logReceiver;
         }
 
-        public async UniTask LoadProject() => await LoadAssets(_projectLabel);
+        public async UniTask<bool> LoadProject() => await LoadAssets(_projectLabel);
 
         //BUG dont update progressReceiver!
         public async UniTask<bool> LoadAssets(AssetLabel label, Action<float> progressReceiver = null) =>

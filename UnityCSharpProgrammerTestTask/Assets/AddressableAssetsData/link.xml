@@ -1,0 +1,131 @@
+<linker>
+  <assembly fullname="Common, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null">
+    <type fullname="Client.Common.Data.Configs.AssetLabelsConfig" preserve="all" />
+    <type fullname="Client.Common.Data.Configs.ProjectConfig" preserve="all" />
+    <type fullname="Client.Common.Data.Configs.ScenesConfig" preserve="all" />
+    <type fullname="Client.Common.Services.InputService.InputServiceObject" preserve="all" />
+    <type fullname="Client.Common.UI.Button.Load.LoadButton" preserve="all" />
+    <type fullname="Client.Common.UI.GlobalCanvas" preserve="all" />
+    <type fullname="Client.Common.UI.Windows.Loading.LoadingWindow" preserve="all" />
+    <type fullname="Client.Common.UI.Windows.Popup.PopupsWindow" preserve="all" />
+    <type fullname="Client.Common.UI.Windows.Popup.PopupWindow" preserve="all" />
+  </assembly>
+  <assembly fullname="Hub, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null">
+    <type fullname="Client.Hub.Data.HubConfig" preserve="all" />
+    <type fullname="Client.Hub.Infrastructure.Installers.HubInstaller" preserve="all" />
+    <type fullname="Client.Hub.UI.Buttons.Unload.UnloadButton" preserve="all" />
+    <type fullname="Client.Hub.UI.HubCanvasObject" preserve="all" />
+  </assembly>
+  <assembly fullname="MiniGame1, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null">
+    <type fullname="Client.MiniGame1.Data.MiniGame1Config" preserve="all" />
+    <type fullname="Client.MiniGame1.Gameplay.ClickableSpriteObject" preserve="all" />
+    <type fullname="Client.MiniGame1.Gameplay.GameplayCamera.CameraObject" preserve="all" />
+    <type fullname="Client.MiniGame1.Gameplay.Player.UI.PlayerCanvas" preserve="all" />
+    <type fullname="Client.MiniGame1.Gameplay.Player.UI.PlayerScoreBar" preserve="all" />
+    <type fullname="Client.MiniGame1.Infrastructure.MiniGame1Installer" preserve="all" />
+  </assembly>
+  <assembly fullname="MiniGame2, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null">
+    <type fullname="Client.Code.MiniGame2.Data.MiniGame2Config" preserve="all" />
+    <type fullname="Client.Code.MiniGame2.Gameplay.DefeatObject" preserve="all" />
+    <type fullname="Client.Code.MiniGame2.Gameplay.FinishObject" preserve="all" />
+    <type fullname="Client.Code.MiniGame2.Gameplay.Player.PlayerObject" preserve="all" />
+    <type fullname="Client.Code.MiniGame2.Gameplay.Player.UI.PlayerCanvas" preserve="all" />
+    <type fullname="Client.Code.MiniGame2.Gameplay.Player.UI.PlayerTimeBar" preserve="all" />
+    <type fullname="Client.Code.MiniGame2.Infrastructure.MiniGame2Installer" preserve="all" />
+    <type fullname="Client.Code.MiniGame2.UI.MiniGame2DefeatWindow" preserve="all" />
+    <type fullname="Client.Code.MiniGame2.UI.MiniGame2WinWindow" preserve="all" />
+    <type fullname="Client.Code.MiniGame2.Data.MiniGame2SceneData" preserve="nothing" serialized="true" />
+  </assembly>
+  <assembly fullname="Unity.Addressables, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null" preserve="all">
+    <type fullname="UnityEngine.AddressableAssets.Addressables" preserve="all" />
+    <type fullname="UnityEngine.AddressableAssets.AssetReference" preserve="nothing" serialized="true" />
+  </assembly>
+  <assembly fullname="Unity.ResourceManager, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null" preserve="all">
+    <type fullname="UnityEngine.ResourceManagement.ResourceProviders.AssetBundleProvider" preserve="all" />
+    <type fullname="UnityEngine.ResourceManagement.ResourceProviders.BundledAssetProvider" preserve="all" />
+    <type fullname="UnityEngine.ResourceManagement.ResourceProviders.InstanceProvider" preserve="all" />
+    <type fullname="UnityEngine.ResourceManagement.ResourceProviders.SceneProvider" preserve="all" />
+  </assembly>
+  <assembly fullname="Unity.TextMeshPro, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null">
+    <type fullname="TMPro.TextMeshProUGUI" preserve="all" />
+    <type fullname="TMPro.TMP_FontAsset" preserve="all" />
+    <type fullname="TMPro.FaceInfo_Legacy" preserve="nothing" serialized="true" />
+    <type fullname="TMPro.FontAssetCreationSettings" preserve="nothing" serialized="true" />
+    <type fullname="TMPro.KerningTable" preserve="nothing" serialized="true" />
+    <type fullname="TMPro.TMP_Character" preserve="nothing" serialized="true" />
+    <type fullname="TMPro.TMP_FontFeatureTable" preserve="nothing" serialized="true" />
+    <type fullname="TMPro.TMP_FontWeightPair" preserve="nothing" serialized="true" />
+    <type fullname="TMPro.TMP_GlyphAdjustmentRecord" preserve="nothing" serialized="true" />
+    <type fullname="TMPro.TMP_GlyphPairAdjustmentRecord" preserve="nothing" serialized="true" />
+    <type fullname="TMPro.TMP_GlyphValueRecord" preserve="nothing" serialized="true" />
+    <type fullname="TMPro.VertexGradient" preserve="nothing" serialized="true" />
+  </assembly>
+  <assembly fullname="UnityEngine.AudioModule, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null">
+    <type fullname="UnityEngine.AudioListener" preserve="all" />
+  </assembly>
+  <assembly fullname="UnityEngine.CoreModule, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null">
+    <type fullname="UnityEngine.Camera" preserve="all" />
+    <type fullname="UnityEngine.Cubemap" preserve="all" />
+    <type fullname="UnityEngine.GameObject" preserve="all" />
+    <type fullname="UnityEngine.Light" preserve="all" />
+    <type fullname="UnityEngine.LightmapSettings" preserve="all" />
+    <type fullname="UnityEngine.Material" preserve="all" />
+    <type fullname="UnityEngine.MeshFilter" preserve="all" />
+    <type fullname="UnityEngine.MeshRenderer" preserve="all" />
+    <type fullname="UnityEngine.Object" preserve="all" />
+    <type fullname="UnityEngine.RectTransform" preserve="all" />
+    <type fullname="UnityEngine.RenderSettings" preserve="all" />
+    <type fullname="UnityEngine.Shader" preserve="all" />
+    <type fullname="UnityEngine.Sprite" preserve="all" />
+    <type fullname="UnityEngine.SpriteRenderer" preserve="all" />
+    <type fullname="UnityEngine.Texture2D" preserve="all" />
+    <type fullname="UnityEngine.Transform" preserve="all" />
+    <type fullname="UnityEngine.Events.PersistentCallGroup" preserve="nothing" serialized="true" />
+    <type fullname="UnityEngine.RectOffset" preserve="nothing" serialized="true" />
+    <type fullname="UnityEngine.Events.UnityEvent" preserve="nothing" serialized="true" />
+  </assembly>
+  <assembly fullname="UnityEngine.Physics2DModule, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null">
+    <type fullname="UnityEngine.CircleCollider2D" preserve="all" />
+  </assembly>
+  <assembly fullname="UnityEngine.PhysicsModule, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null">
+    <type fullname="UnityEngine.BoxCollider" preserve="all" />
+    <type fullname="UnityEngine.Rigidbody" preserve="all" />
+  </assembly>
+  <assembly fullname="UnityEngine.TextRenderingModule, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null">
+    <type fullname="UnityEngine.Font" preserve="all" />
+  </assembly>
+  <assembly fullname="UnityEngine.UI, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null">
+    <type fullname="UnityEngine.EventSystems.EventSystem" preserve="all" />
+    <type fullname="UnityEngine.EventSystems.StandaloneInputModule" preserve="all" />
+    <type fullname="UnityEngine.UI.Button" preserve="all" />
+    <type fullname="UnityEngine.UI.CanvasScaler" preserve="all" />
+    <type fullname="UnityEngine.UI.GraphicRaycaster" preserve="all" />
+    <type fullname="UnityEngine.UI.GridLayoutGroup" preserve="all" />
+    <type fullname="UnityEngine.UI.Image" preserve="all" />
+    <type fullname="UnityEngine.UI.Slider" preserve="all" />
+    <type fullname="UnityEngine.UI.VerticalLayoutGroup" preserve="all" />
+    <type fullname="UnityEngine.UI.MaskableGraphic/CullStateChangedEvent" preserve="nothing" serialized="true" />
+    <type fullname="UnityEngine.UI.AnimationTriggers" preserve="nothing" serialized="true" />
+    <type fullname="UnityEngine.UI.Button/ButtonClickedEvent" preserve="nothing" serialized="true" />
+    <type fullname="UnityEngine.UI.ColorBlock" preserve="nothing" serialized="true" />
+    <type fullname="UnityEngine.UI.Navigation" preserve="nothing" serialized="true" />
+    <type fullname="UnityEngine.UI.SpriteState" preserve="nothing" serialized="true" />
+    <type fullname="UnityEngine.UI.Slider/SliderEvent" preserve="nothing" serialized="true" />
+  </assembly>
+  <assembly fullname="UnityEngine.UIModule, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null">
+    <type fullname="UnityEngine.Canvas" preserve="all" />
+    <type fullname="UnityEngine.CanvasRenderer" preserve="all" />
+  </assembly>
+  <assembly fullname="Zenject, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null">
+    <type fullname="Zenject.SceneContext" preserve="all" />
+  </assembly>
+  <assembly fullname="Sirenix.Serialization">
+    <type fullname="Sirenix.Serialization.SerializationData" preserve="nothing" serialized="true" />
+  </assembly>
+  <assembly fullname="UnityEngine.TextCoreFontEngineModule">
+    <type fullname="UnityEngine.TextCore.FaceInfo" preserve="nothing" serialized="true" />
+    <type fullname="UnityEngine.TextCore.Glyph" preserve="nothing" serialized="true" />
+    <type fullname="UnityEngine.TextCore.GlyphMetrics" preserve="nothing" serialized="true" />
+    <type fullname="UnityEngine.TextCore.GlyphRect" preserve="nothing" serialized="true" />
+  </assembly>
+</linker>

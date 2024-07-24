@@ -31,11 +31,13 @@ namespace Client.Hub.Infrastructure.States
 
         public async UniTask Enter()
         {
-            await _assetLoader.LoadProject();
-            _loggerByPopup.Initialize();
-            _uiFactory.Initialize();
-            _inputServiceFactory.Create();
-            await _stateMachine.SwitchTo<HubLoadState>();
+            if (await _assetLoader.LoadProject())
+            {
+                _loggerByPopup.Initialize();
+                _uiFactory.Initialize();
+                _inputServiceFactory.Create();
+                await _stateMachine.SwitchTo<HubLoadState>();
+            }
         }
 
         public UniTask Exit()
