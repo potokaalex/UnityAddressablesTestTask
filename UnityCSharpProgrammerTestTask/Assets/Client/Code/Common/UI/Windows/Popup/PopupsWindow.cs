@@ -1,4 +1,3 @@
-using Client.Common.UI.Factories;
 using Client.Common.UI.Windows.Base;
 using UnityEngine;
 using Zenject;
