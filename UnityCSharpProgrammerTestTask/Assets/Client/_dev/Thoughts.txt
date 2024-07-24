@@ -9,20 +9,23 @@ StateMachine используется как локальная машина и 
 
 порядок загрузки: (bootstrapLoader) -> projInstaller -> bootstrapInstaller -> projLoadState -> hubLoadState -> (local)HubState ->:
                   -> miniGame1LoadState -> (local)miniGame1State
-                  -> miniGame2LoadState
+                  -> miniGame2LoadState -> (local)miniGame2State ->:
+                                        -> (local)miniGame2WinState
+                                        -> (local)miniGame2DefeatState
                   -> (anyWay)projectExitState
 
 Для загрузки ассетов используются сервис AssetLoader, он загружает ассеты по меткам, ссылка на первую метку(Project) передаётся ему через projInstaller
 При загрузке, все заинтересованные буду оповещены через IAssetReceiver<> 
 Порядок загрузки ассетов: Project -> Hub -> :
                           -> MiniGame1
-                          -> MiniGame1
+                          -> MiniGame2
 
 
 Система загрузки прогресса тоже использует систему оповещения о загрузке-сохранении прогресса через специальные интерфейсы: IProgressReader, IProgressWriter
 порядок загрузки прогресса: miniGame1LoadState(loadProgress) -> miniGame1LoadState(save progress)
+                            miniGame2LoadState(loadProgress) -> miniGame2LoadState(save progress)
                             (anyWay)projectExitState(save progress) 
-
+                            
 
 зависимости сборок: Common: nothing
                     Hub: Common, MiniGame1, MiniGame2
@@ -31,8 +34,6 @@ StateMachine используется как локальная машина и 
 
 
 TODO:
-    miniGame2 gameplay
-    добавить баланса miniGame1
     кнопки выгрузки!
     тесты работы
     тесты производительности

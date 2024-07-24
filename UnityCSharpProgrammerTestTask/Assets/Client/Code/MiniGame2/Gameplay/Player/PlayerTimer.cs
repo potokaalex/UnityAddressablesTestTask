@@ -25,8 +25,10 @@ namespace Client.Code.MiniGame2.Gameplay.Player
         {
             _stopwatch.Stop();
             OnUpdate();
-            if (CurrentTimeMs.Value < BestTimeMs.Value && _controller.IsWin)
-                BestTimeMs.Value = CurrentTimeMs.Value;
+            
+            if (CurrentTimeMs.Value < BestTimeMs.Value || BestTimeMs.Value == 0)
+                if(_controller.IsWin)
+                    BestTimeMs.Value = CurrentTimeMs.Value;
         }
 
         public void OnSave(ProgressData progress) => progress.MiniGame2.BestTimeMs = BestTimeMs.Value;
