@@ -37,11 +37,12 @@ namespace Client.Code.MiniGame2.Infrastructure.States
             if (loadSceneResult.Item2 && await LoadAssets(loadingWindow))
             {
                 await LoadProgress(loadingWindow);
-                _uiFactory.Destroy(loadingWindow);
                 _startupRunner.Run(loadSceneResult.Item1);
             }
             else
                 await _stateMachine.SwitchTo<HubLoadState>();
+            
+            _uiFactory.Destroy(loadingWindow);
         }
 
         private async UniTask<(Scene, bool)> LoadScene(LoadingWindow loadingWindow) =>
