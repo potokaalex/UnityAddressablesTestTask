@@ -14,7 +14,10 @@ namespace Client.Common.UI.Factories
             if (!_windows.TryGetValue(prefab.GetType(), out var windows) || windows.Count == 0)
                 return (T)CreateNewWindow(prefab, root);
 
-            return (T)windows[0];
+            var window = windows[^1];
+            windows.RemoveAt(windows.Count - 1);
+            
+            return (T)window;
         }
 
         private protected void DestroyWindow(WindowBase window)

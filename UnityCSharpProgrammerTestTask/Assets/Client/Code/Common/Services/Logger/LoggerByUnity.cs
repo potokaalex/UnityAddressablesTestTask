@@ -4,8 +4,11 @@ namespace Client.Common.Services.Logger
 {
     public class LoggerByUnity : ILogHandler
     {
-        private bool _isInitialize;
-
-        public void Handle(LogData log) => UnityEngine.Debug.Log(log.Message);
+        public void Handle(LogData log)
+        {
+#if UNITY_EDITOR
+            UnityEngine.Debug.Log($"<color=yellow>Log:</color> {log.Message}");
+#endif
+        }
     }
 }
