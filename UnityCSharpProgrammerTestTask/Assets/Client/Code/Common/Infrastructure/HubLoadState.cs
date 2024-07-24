@@ -31,12 +31,12 @@ namespace Client.Common.Infrastructure
             await LoadAssets(loadingWindow);
 
             _uiFactory.Destroy(loadingWindow);
-            _startupRunner.Run(scene);
+            _startupRunner.Run(scene.Item1);
         }
 
         public UniTask Exit() => UniTask.CompletedTask;
 
-        private async UniTask<Scene> LoadScene(LoadingWindow loadingWindow) =>
+        private async UniTask<(Scene, bool)> LoadScene(LoadingWindow loadingWindow) =>
             await _sceneLoader.LoadSceneAsync(SceneName.Hub, p => loadingWindow.SetProgress(p, 0, 0.5f));
 
         private async UniTask LoadAssets(LoadingWindow loadingWindow) =>

@@ -33,18 +33,18 @@ namespace Client.MiniGame1.Infrastructure.States
         public async UniTask Enter()
         {
             var loadingWindow = _uiFactory.Create();
-            var scene = await LoadScene(loadingWindow);
-            if (await LoadAssets(loadingWindow))
+            var loadSceneResult = await LoadScene(loadingWindow);
+            if (loadSceneResult.Item2 && await LoadAssets(loadingWindow))
             {
                 await LoadProgress(loadingWindow);
                 _uiFactory.Destroy(loadingWindow);
-                _startupRunner.Run(scene);
+                _startupRunner.Run(loadSceneResult.Item1);
             }
             else
                 await _stateMachine.SwitchTo<HubLoadState>();
         }
 
-        private async UniTask<Scene> LoadScene(LoadingWindow loadingWindow) =>
+        private async UniTask<(Scene, bool)> LoadScene(LoadingWindow loadingWindow) =>
             await _sceneLoader.LoadSceneAsync(SceneName.MiniGame1, f => loadingWindow.SetProgress(f, 0, 1 / 3f));
 
         private async UniTask<bool> LoadAssets(LoadingWindow loadingWindow) =>

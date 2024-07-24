@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using Client.Common.Data.Configs;
+using Client.Common.Services.Logger.Base;
 using Cysharp.Threading.Tasks;
 using UnityEngine.AddressableAssets;
 
@@ -10,9 +11,14 @@ namespace Client.Common.Services.AssetLoader
     {
         private readonly Dictionary<IAssetReceiverBase, Type> _receivers = new();
         private readonly AssetLabelReference _projectLabel;
+        private readonly ILogReceiver _logReceiver;
         private ProjectConfig _config;
 
-        public AssetLoader(AssetLabelReference projectLabel) => _projectLabel = projectLabel;
+        public AssetLoader(AssetLabelReference projectLabel, ILogReceiver logReceiver)
+        {
+            _projectLabel = projectLabel;
+            _logReceiver = logReceiver;
+        }
 
         public async UniTask LoadProject() => await LoadAssets(_projectLabel);
 
@@ -41,7 +47,7 @@ namespace Client.Common.Services.AssetLoader
             }
             catch(Exception exception)
             {
-                UnityEngine.Debug.Log(exception.Message);
+                _logReceiver.Log(new LogData {Message = exception.Message});
                 return false;
             }
 
