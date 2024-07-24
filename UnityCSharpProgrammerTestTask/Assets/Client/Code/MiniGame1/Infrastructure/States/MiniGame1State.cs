@@ -9,13 +9,11 @@ namespace Client.MiniGame1.Infrastructure.States
     {
         private readonly CameraFactory _cameraFactory;
         private readonly PlayerFactory _playerFactory;
-        private readonly IStateMachine _stateMachine;
 
-        public MiniGame1State(CameraFactory cameraFactory, PlayerFactory playerFactory, IStateMachine stateMachine)
+        public MiniGame1State(CameraFactory cameraFactory, PlayerFactory playerFactory)
         {
             _cameraFactory = cameraFactory;
             _playerFactory = playerFactory;
-            _stateMachine = stateMachine;
         }
 
         public UniTask Enter()
@@ -25,10 +23,10 @@ namespace Client.MiniGame1.Infrastructure.States
             return UniTask.CompletedTask;
         }
 
-        public async UniTask Exit()
+        public UniTask Exit()
         {
             _playerFactory.Destroy();
-            await _stateMachine.SwitchTo<MiniGame1SaveState>();
+            return UniTask.CompletedTask;
         }
     }
 }

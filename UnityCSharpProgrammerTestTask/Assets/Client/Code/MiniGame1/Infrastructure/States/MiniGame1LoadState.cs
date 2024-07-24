@@ -34,8 +34,7 @@ namespace Client.MiniGame1.Infrastructure.States
         {
             var loadingWindow = _uiFactory.Create();
             var scene = await LoadScene(loadingWindow);
-            var loadAssetsResult = await LoadAssets(loadingWindow);
-            if (loadAssetsResult)
+            if (await LoadAssets(loadingWindow))
             {
                 await LoadProgress(loadingWindow);
                 _uiFactory.Destroy(loadingWindow);
