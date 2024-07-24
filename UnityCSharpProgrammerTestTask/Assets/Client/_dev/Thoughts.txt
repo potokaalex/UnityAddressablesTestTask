@@ -24,8 +24,8 @@ StateMachine используется как локальная машина и 
 
 
 Система загрузки прогресса тоже использует систему оповещения о загрузке-сохранении прогресса через специальные интерфейсы: IProgressReader, IProgressWriter
-порядок загрузки прогресса: miniGame1LoadState(loadProgress) -> miniGame1LoadState(save progress)
-                            miniGame2LoadState(loadProgress) -> miniGame2LoadState(save progress)
+порядок загрузки прогресса: miniGame1LoadState(loadProgress) -> miniGame1UnloadState(save progress)
+                            miniGame2LoadState(loadProgress) -> miniGame2UnloadState(save progress)
                             (anyWay)projectExitState(save progress) 
                             
 
@@ -36,14 +36,10 @@ StateMachine используется как локальная машина и 
 
 
 TODO:
-    возможна ли сейчас загрузка сцены по ключу ?
-    выгрузка 2 мини-игры
-    кнопки выгрузки!
-    документация: обновить порядок сохранения прогресса!
     тесты работы
     тесты производительности
     рефакторинг:
-        зачем я создаю фабрику ?
+        зачем я создаю камеру ?
         проверить на использование System.Task
         cleanup
         проход по предупреждениям.
