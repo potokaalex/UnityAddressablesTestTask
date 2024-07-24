@@ -23,6 +23,6 @@ namespace Client.Common.UI.Button.Base
 
         private protected virtual void OnDestroy() => _button.onClick.RemoveListener(OnClick);
 
-        private protected virtual void OnClick() => _handler.Handle(this);
+        private protected void OnClick() => _handler.Handle(this);
     }
 }

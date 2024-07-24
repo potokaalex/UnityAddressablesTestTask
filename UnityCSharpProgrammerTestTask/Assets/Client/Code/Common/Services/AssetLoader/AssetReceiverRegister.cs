@@ -14,17 +14,17 @@ namespace Client.Common.Services.AssetLoader
             _receivers = receivers;
             _assetLoader = assetLoader;
         }
-        
+
         public void Initialize()
         {
-            foreach (var receiver in _receivers) 
-                _assetLoader.RegisterReceiver(receiver);    
+            foreach (var receiver in _receivers)
+                _assetLoader.RegisterReceiver(receiver);
         }
 
         public void Dispose()
         {
-            foreach (var receiver in _receivers) 
-                _assetLoader.UnRegisterReceiver(receiver);    
+            foreach (var receiver in _receivers)
+                _assetLoader.UnRegisterReceiver(receiver);
         }
     }
 }

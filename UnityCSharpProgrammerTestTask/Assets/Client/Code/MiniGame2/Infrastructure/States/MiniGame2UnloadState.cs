@@ -4,7 +4,7 @@ using Client.Common.Services.ProgressService.Saver;
 using Client.Common.Services.StateMachine;
 using Cysharp.Threading.Tasks;
 
-namespace Client.MiniGame1.Infrastructure.States
+namespace Client.Code.MiniGame2.Infrastructure.States
 {
     public class MiniGame2UnloadState : IState
     {

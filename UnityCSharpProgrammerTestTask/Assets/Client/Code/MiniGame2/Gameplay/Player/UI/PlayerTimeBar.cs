@@ -7,7 +7,7 @@ namespace Client.Code.MiniGame2.Gameplay.Player.UI
     public class PlayerTimeBar : MonoBehaviour
     {
         [SerializeField] private TMP_Text _timeText;
-        
+
         public void Set(float timeMs)
         {
             var sec = timeMs / 1000;

@@ -25,9 +25,9 @@ namespace Client.Code.MiniGame2.Gameplay.Player
         {
             _stopwatch.Stop();
             OnUpdate();
-            
+
             if (CurrentTimeMs.Value < BestTimeMs.Value || BestTimeMs.Value == 0)
-                if(_controller.IsWin)
+                if (_controller.IsWin)
                     BestTimeMs.Value = CurrentTimeMs.Value;
         }
 

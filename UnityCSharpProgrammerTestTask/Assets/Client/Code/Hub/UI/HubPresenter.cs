@@ -1,10 +1,7 @@
-﻿using Client.Code.MiniGame2.Infrastructure;
-using Client.Code.MiniGame2.Infrastructure.States;
+﻿using Client.Code.MiniGame2.Infrastructure.States;
 using Client.Common.Services.StateMachine.Global;
-using Client.Common.UI.Button;
 using Client.Common.UI.Button.Base;
 using Client.Common.UI.Button.Load;
-using Client.Hub.Infrastructure.States;
 using Client.Hub.UI.Buttons.Unload;
 using Client.MiniGame1.Infrastructure.States;
 using Cysharp.Threading.Tasks;
@@ -21,7 +18,7 @@ namespace Client.Hub.UI
         {
             if (button.GetBaseType() == ButtonType.Load)
                 HandleLoad((LoadButton)button);
-            
+
             if (button.GetBaseType() == ButtonType.Unload)
                 HandleUnload((UnloadButton)button);
         }
@@ -30,7 +27,7 @@ namespace Client.Hub.UI
         {
             if (button.Type == UnloadButtonType.MiniGame1)
                 _stateMachine.SwitchTo<MiniGame1ClearState>().Forget();
-            else if(button.Type == UnloadButtonType.MiniGame2)
+            else if (button.Type == UnloadButtonType.MiniGame2)
                 _stateMachine.SwitchTo<MiniGame2ClearState>().Forget();
         }
 
@@ -38,7 +35,7 @@ namespace Client.Hub.UI
         {
             if (button.Type == LoadButtonType.MiniGame1)
                 _stateMachine.SwitchTo<MiniGame1LoadState>().Forget();
-            else if(button.Type == LoadButtonType.MiniGame2)
+            else if (button.Type == LoadButtonType.MiniGame2)
                 _stateMachine.SwitchTo<MiniGame2LoadState>().Forget();
         }
     }

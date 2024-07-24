@@ -1,11 +1,10 @@
 ﻿using System;
-using System.Collections.Generic;
 using Client.Common.Data.Configs;
 using Client.Common.Services.AssetLoader;
 using Client.Common.Services.Logger.Base;
+using Client.Common.Utilities;
 using Cysharp.Threading.Tasks;
 using UnityEngine.AddressableAssets;
-using UnityEngine.ResourceManagement.AsyncOperations;
 using UnityEngine.ResourceManagement.ResourceProviders;
 using UnityEngine.SceneManagement;
 
@@ -13,7 +12,6 @@ namespace Client.Common.Services.SceneLoader
 {
     public class SceneLoader : ISceneLoader, IAssetReceiver<ProjectConfig>
     {
-        private readonly Dictionary<AssetReference, AsyncOperationHandle<SceneInstance>> _handles = new();
         private readonly ILogReceiver _logReceiver;
         private ProjectConfig _config;
 
@@ -43,7 +41,6 @@ namespace Client.Common.Services.SceneLoader
             try
             {
                 var handle = Addressables.LoadSceneAsync(key, releaseMode: SceneReleaseMode.ReleaseSceneWhenSceneUnloaded);
-                _handles[key] = handle;
                 var sceneInstance = await handle.ToUniTask(progress: progress);
                 await UniTask.Yield();
                 return (sceneInstance.Scene, true);

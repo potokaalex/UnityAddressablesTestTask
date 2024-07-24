@@ -11,7 +11,7 @@ namespace Client.MiniGame1.Gameplay.GameplayCamera
         public CameraController(IInputService inputService) => _inputService = inputService;
 
         public void Initialize(CameraObject cameraObject) => _cameraObject = cameraObject;
-        
+
         public Ray GetRayFromCurrentMousePosition() => _cameraObject.Camera.ScreenPointToRay(_inputService.MousePosition);
     }
 }

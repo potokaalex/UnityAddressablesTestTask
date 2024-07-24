@@ -19,7 +19,7 @@ namespace Client.MiniGame1.Infrastructure
             BindCamera();
             BindPlayer();
             BindStateMachine();
-            
+
             Container.BindInterfacesTo<MiniGame1Presenter>().AsSingle();
             Container.BindInterfacesTo<AssetReceiverRegister>().AsSingle();
             Container.BindInterfacesTo<ProgressActorsRegister>().AsSingle();
@@ -40,7 +40,7 @@ namespace Client.MiniGame1.Infrastructure
             Container.Bind<CameraController>().AsSingle();
             Container.BindInterfacesAndSelfTo<CameraFactory>().AsSingle();
         }
-        
+
         private void BindStateMachine()
         {
             Container.BindInterfacesTo<StateFactory>().AsSingle();

@@ -11,7 +11,7 @@ namespace Client.Code.MiniGame2.Data
         public PlayerCanvas PlayerCanvasPrefab;
         public PlayerObject PlayerPrefab;
         public float PlayerMoveSpeed;
-        
+
         public MiniGame2WinWindow WinWindowPrefab;
         public MiniGame2DefeatWindow DefeatWindowPrefab;
     }

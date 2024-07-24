@@ -7,7 +7,7 @@ namespace Client.Common.Services.StateMachine
     public class StateMachine : IStateMachine, IDisposable
     {
         private readonly IStateFactory _factory;
-        private protected IState CurrentState;
+        private IState _currentState;
 
         public StateMachine(IStateFactory factory) => _factory = factory;
 
@@ -16,22 +16,22 @@ namespace Client.Common.Services.StateMachine
         public async UniTask SwitchTo(Type type)
         {
             await Exit();
-            CurrentState = _factory.Create(type);
+            _currentState = _factory.Create(type);
             await Enter();
         }
 
         private async UniTask Enter()
         {
             DebugOnEnter();
-            await CurrentState.Enter();
+            await _currentState.Enter();
         }
 
         private async UniTask Exit()
         {
-            if (CurrentState != null)
+            if (_currentState != null)
             {
                 DebugOnExit();
-                await CurrentState.Exit();
+                await _currentState.Exit();
             }
         }
 

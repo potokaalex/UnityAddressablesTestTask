@@ -1,5 +1,4 @@
-﻿using Client.Common.Data;
-using Client.Common.Data.Configs;
+﻿using Client.Common.Data.Configs;
 using Client.Common.Services.AssetLoader;
 using Zenject;
 

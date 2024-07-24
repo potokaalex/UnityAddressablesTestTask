@@ -28,7 +28,7 @@ namespace Client.MiniGame1.Gameplay.Player
 
             var ray = _cameraController.GetRayFromCurrentMousePosition();
             var hit = Physics2D.Raycast(ray.origin, ray.direction);
-            
+
             if (hit.transform && hit.transform.TryGetComponent<ClickableSpriteObject>(out _))
                 _playerModel.Score.Value++;
         }

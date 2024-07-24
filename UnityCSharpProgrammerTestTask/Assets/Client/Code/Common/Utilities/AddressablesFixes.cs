@@ -6,9 +6,12 @@ using UnityEngine.ResourceManagement.AsyncOperations;
 using UnityEngine.ResourceManagement.ResourceLocations;
 using UnityEngine.ResourceManagement.ResourceProviders;
 
-namespace Client.Common
+namespace Client.Common.Utilities
 {
-public class AddressablesFixes : MonoBehaviour
+    //Taken from here:
+    //https://discussions.unity.com/t/how-to-use-addressables-cleardependencycacheasync-where-lines/803226/14#:~:text=Aug%202020-,Update,-%3A
+    
+    public class AddressablesFixes : MonoBehaviour
     {
         /// <summary>
         /// This is a workaround the broken Addressables method. If Addressable Package is updated this method could break, or in the best case become obsolete.
@@ -23,19 +26,16 @@ public class AddressablesFixes : MonoBehaviour
             }
             else
             {
-                initHandle.Completed += (handle) =>
-                {
-                    ClearDependencyCacheForKeyInternal(key);
-                };
+                initHandle.Completed += _ => { ClearDependencyCacheForKeyInternal(key); };
             }
+
             return initHandle;
         }
 
         private static void ClearDependencyCacheForKeyInternal(object key)
         {
 #if ENABLE_CACHING
-            IList<IResourceLocation> locations;
-            if (key is IResourceLocation resourceLocation && resourceLocation.HasDependencies)
+            if (key is IResourceLocation { HasDependencies: true } resourceLocation)
             {
                 foreach (var dep in resourceLocation.Dependencies)
                 {
@@ -45,7 +45,7 @@ public class AddressablesFixes : MonoBehaviour
                     }
                 }
             }
-            else if (GetResourceLocations(key, typeof(object), out locations))
+            else if (GetResourceLocations(key, typeof(object), out var locations))
             {
                 foreach (var dep in GatherDependenciesFromLocations(locations))
                 {
@@ -68,7 +68,7 @@ public class AddressablesFixes : MonoBehaviour
             }
         }
 
-        static private List<IResourceLocation> GatherDependenciesFromLocations(IList<IResourceLocation> locations)
+        private static List<IResourceLocation> GatherDependenciesFromLocations(IList<IResourceLocation> locations)
         {
             var locHash = new HashSet<IResourceLocation>();
             foreach (var loc in locations)
@@ -77,6 +77,7 @@ public class AddressablesFixes : MonoBehaviour
                 {
                     locHash.Add(loc);
                 }
+
                 if (loc.HasDependencies)
                 {
                     foreach (var dep in loc.Dependencies)
@@ -84,6 +85,7 @@ public class AddressablesFixes : MonoBehaviour
                             locHash.Add(dep);
                 }
             }
+
             return new List<IResourceLocation>(locHash);
         }
 
@@ -96,8 +98,7 @@ public class AddressablesFixes : MonoBehaviour
             foreach (var locatorInfo in Addressables.ResourceLocators)
             {
                 var locator = locatorInfo;
-                IList<IResourceLocation> locs;
-                if (locator.Locate(key, type, out locs))
+                if (locator.Locate(key, type, out var locs))
                 {
                     if (locations == null)
                     {
@@ -128,8 +129,9 @@ public class AddressablesFixes : MonoBehaviour
 
         private static object EvaluateKey(object obj)
         {
-            if (obj is IKeyEvaluator)
-                return (obj as IKeyEvaluator).RuntimeKey;
+            if (obj is IKeyEvaluator evaluator)
+                return evaluator.RuntimeKey;
+            
             return obj;
         }
     }

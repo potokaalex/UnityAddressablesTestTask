@@ -1,5 +1,4 @@
-﻿using Client.Common.Services.Startup;
-using Client.Common.Services.Startup.Auto;
+﻿using Client.Common.Services.Startup.Auto;
 using Client.Hub.Infrastructure.States;
 using Zenject;
 

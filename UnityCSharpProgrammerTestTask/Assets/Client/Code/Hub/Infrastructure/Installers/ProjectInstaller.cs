@@ -28,7 +28,7 @@ namespace Client.Hub.Infrastructure.Installers
             BindLog();
             BindInputService();
             BindProgress();
-            
+
             Container.BindInterfacesTo<SceneLoader>().AsSingle();
             Container.BindInterfacesTo<GlobalUIFactory>().AsSingle();
             Container.BindInterfacesTo<Updater>().FromNewComponentOnNewGameObject().AsSingle();

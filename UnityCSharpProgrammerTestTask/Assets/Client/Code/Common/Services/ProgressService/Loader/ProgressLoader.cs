@@ -22,6 +22,8 @@ namespace Client.Common.Services.ProgressService.Loader
 
             foreach (var reader in _readers)
                 reader.OnLoad(progress);
+            
+            progressReceiver?.Invoke(1);
         }
 
         private async UniTask<ProgressData> LoadProgress()
@@ -30,7 +32,7 @@ namespace Client.Common.Services.ProgressService.Loader
 
             if (!File.Exists(ProgressStorageConstants.FilePath))
                 return defaultProgress;
-            
+
             try
             {
                 using var reader = new StreamReader(ProgressStorageConstants.FilePath, false);
@@ -43,7 +45,7 @@ namespace Client.Common.Services.ProgressService.Loader
             {
                 _logReceiver.Log(new LogData { Message = exception.Message });
             }
-            
+
             return defaultProgress;
         }
 

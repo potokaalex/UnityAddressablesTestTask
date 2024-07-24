@@ -1,7 +1,4 @@
-﻿using Client.Common.Infrastructure;
-using Client.Common.Services.StateMachine;
-using Client.Common.Services.StateMachine.Global;
-using Client.Common.UI.Button;
+﻿using Client.Common.Services.StateMachine.Global;
 using Client.Common.UI.Button.Base;
 using Client.Common.UI.Button.Load;
 using Client.MiniGame1.Infrastructure.States;

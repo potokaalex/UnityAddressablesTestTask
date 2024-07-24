@@ -16,7 +16,7 @@ namespace Client.Common.UI.Factories
 
             var window = windows[^1];
             windows.RemoveAt(windows.Count - 1);
-            
+
             return (T)window;
         }
 
