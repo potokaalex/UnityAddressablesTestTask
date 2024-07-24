@@ -7,13 +7,7 @@ using Zenject;
 
 namespace Client.Code.MiniGame2.Gameplay
 {
-    public class DefeatObject : MonoBehaviour, IInteractiveWith<PlayerObject>
+    public class DefeatObject : MonoBehaviour
     {
-        private IStateMachine _stateMachine;
-
-        [Inject]
-        public void Construct(IStateMachine stateMachine) => _stateMachine = stateMachine;
-        
-        public void Interact() => _stateMachine.SwitchTo<MiniGame2DefeatState>().Forget();
     }
 }

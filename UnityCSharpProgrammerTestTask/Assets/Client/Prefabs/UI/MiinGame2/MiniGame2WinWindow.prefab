@@ -145,6 +145,7 @@ GameObject:
   - component: {fileID: 7685705390918350940}
   - component: {fileID: 3050005304332547318}
   - component: {fileID: 370860798537464782}
+  - component: {fileID: 373469352467926152}
   m_Layer: 5
   m_Name: MiniGame2WinWindow
   m_TagString: Untagged
@@ -210,3 +211,15 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
+--- !u!114 &373469352467926152
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7578246075712264254}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2ddba678bcee463f9b18d0bbc239018b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

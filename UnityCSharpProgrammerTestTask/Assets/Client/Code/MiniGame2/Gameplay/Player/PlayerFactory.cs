@@ -41,8 +41,8 @@ namespace Client.Code.MiniGame2.Gameplay.Player
         private void CreateTimer()
         {
             var canvas = _instantiator.InstantiatePrefabForComponent<PlayerCanvas>(_config.PlayerCanvasPrefab);
-            canvas.PlayerBestScore.Set(_timer.BestScoreMs);
-            _timer.CurrentScoreMs.Subscribe(v => canvas.PlayerCurrenScore.Set(v));
+            _timer.BestTimeMs.Subscribe(v => canvas.PlayerBestTimeBar.Set(v));
+            _timer.CurrentTimeMs.Subscribe(v => canvas.PlayerCurrenTimeBar.Set(v));
             _timer.Start();
         }
 

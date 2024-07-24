@@ -1,6 +1,6 @@
-﻿using Client.Code.MiniGame2.Gameplay;
-using Client.Code.MiniGame2.Gameplay.Player;
+﻿using Client.Code.MiniGame2.Gameplay.Player;
 using Client.Code.MiniGame2.Gameplay.Player.UI;
+using Client.Code.MiniGame2.UI;
 using UnityEngine;
 
 namespace Client.Code.MiniGame2.Data
@@ -11,5 +11,8 @@ namespace Client.Code.MiniGame2.Data
         public PlayerCanvas PlayerCanvasPrefab;
         public PlayerObject PlayerPrefab;
         public float PlayerMoveSpeed;
+        
+        public MiniGame2WinWindow WinWindowPrefab;
+        public MiniGame2DefeatWindow DefeatWindowPrefab;
     }
 }

@@ -8,28 +8,29 @@ namespace Client.Code.MiniGame2.Gameplay.Player
 {
     public class PlayerTimer : IProgressReader, IProgressWriter
     {
+        private readonly PlayerController _controller;
         private readonly Stopwatch _stopwatch = new();
 
-        public ReactiveProperty<float> CurrentScoreMs { get; } = new();
-        
-        public float BestScoreMs { get; private set; }
-        
+        public PlayerTimer(PlayerController controller) => _controller = controller;
+
+        public ReactiveProperty<float> CurrentTimeMs { get; } = new();
+
+        public ReactiveProperty<float> BestTimeMs { get; private set; }
+
         public void Start() => _stopwatch.Start();
 
-        public void OnUpdate() => CurrentScoreMs.Value = (float)_stopwatch.Elapsed.TotalMilliseconds;
+        public void OnUpdate() => CurrentTimeMs.Value = (float)_stopwatch.Elapsed.TotalMilliseconds;
 
         public void Stop()
         {
             _stopwatch.Stop();
             OnUpdate();
+            if (CurrentTimeMs.Value < BestTimeMs.Value && _controller.IsWin)
+                BestTimeMs.Value = CurrentTimeMs.Value;
         }
 
-        public void OnSave(ProgressData progress)
-        {
-            if(CurrentScoreMs.Value > BestScoreMs)
-                BestScoreMs = progress.MiniGame2.BestScoreMs;
-        }
+        public void OnSave(ProgressData progress) => progress.MiniGame2.BestTimeMs = BestTimeMs.Value;
 
-        public void OnLoad(ProgressData progress) => BestScoreMs = progress.MiniGame2.BestScoreMs;
+        public void OnLoad(ProgressData progress) => BestTimeMs = new ReactiveProperty<float>(progress.MiniGame2.BestTimeMs);
     }
 }

@@ -314,8 +314,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8361d79f245c444395788735fff9231b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  PlayerCurrenScore: {fileID: 8078136336835737793}
-  PlayerBestScore: {fileID: 5371486752557369313}
+  PlayerCurrenTimeBar: {fileID: 8078136336835737793}
+  PlayerBestTimeBar: {fileID: 5371486752557369313}
 --- !u!1001 &6529236441527441391
 PrefabInstance:
   m_ObjectHideFlags: 0

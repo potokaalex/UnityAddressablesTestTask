@@ -15,3 +15,5 @@ MonoBehaviour:
   PlayerCanvasPrefab: {fileID: 50654932284072361, guid: af78dcd351d92d540a5c23db1dc41a75, type: 3}
   PlayerPrefab: {fileID: 1971249699945012108, guid: b21b0b7a37084694d92625b2ce041aef, type: 3}
   PlayerMoveSpeed: 10
+  WinWindowPrefab: {fileID: 373469352467926152, guid: 528b51aa82927e24d964085eb32de261, type: 3}
+  DefeatWindowPrefab: {fileID: -1810200412505185646, guid: 1f3d918737896d94f8310520938fbc1d, type: 3}

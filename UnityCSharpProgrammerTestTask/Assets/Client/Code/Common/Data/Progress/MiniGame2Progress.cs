@@ -5,6 +5,6 @@ namespace Client.Common.Data.Progress
     [Serializable]
     public class MiniGame2Progress
     {
-        public float BestScoreMs;
+        public float BestTimeMs;
     }
 }
