@@ -1,6 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using Client.Common.Data;
 using Client.Common.Data.Configs;
 using Cysharp.Threading.Tasks;
 using UnityEngine.AddressableAssets;
@@ -17,13 +16,14 @@ namespace Client.Common.Services.AssetLoader
 
         public async UniTask LoadProject() => await LoadAssets(_projectLabel);
 
-        public async UniTask LoadAssets(AssetLabel label, Action<float> progressReceiver = null) =>
+        //BUG dont update progressReceiver!
+        public async UniTask<bool> LoadAssets(AssetLabel label, Action<float> progressReceiver = null) =>
             await LoadAssets(_config.Labels.Keys[label], progressReceiver);
 
-        public async UniTask LoadAssets(AssetLabelReference label, Action<float> progressReceiver = null)
+        public void UnloadAssets(AssetLabel label)
         {
-            var progress = Progress.Create(progressReceiver);
-            await Addressables.LoadAssetsAsync<object>(label, CallReceivers).ToUniTask(progress: progress);
+            //Addressables.rel
+            Addressables.ClearDependencyCacheAsync(_config.Labels.Keys[label]);
         }
 
         public void RegisterReceiver(IAssetReceiverBase receiver) => _receivers[receiver] = GetGenericType(receiver);
@@ -32,8 +32,27 @@ namespace Client.Common.Services.AssetLoader
 
         public void Receive(ProjectConfig asset) => _config = asset;
 
+        private async UniTask<bool> LoadAssets(AssetLabelReference label, Action<float> progressReceiver = null)
+        {
+            var progress = Progress.Create(progressReceiver);
+            try
+            {
+                await Addressables.LoadAssetsAsync<object>(label, CallReceivers).ToUniTask(progress: progress);
+            }
+            catch(Exception exception)
+            {
+                UnityEngine.Debug.Log(exception.Message);
+                return false;
+            }
+
+            return true;
+        }
+        
         private void CallReceivers(object asset)
         {
+            if(asset == null)
+                return;
+            
             foreach (var receiver in _receivers)
             {
                 if (asset.GetType() == receiver.Value)

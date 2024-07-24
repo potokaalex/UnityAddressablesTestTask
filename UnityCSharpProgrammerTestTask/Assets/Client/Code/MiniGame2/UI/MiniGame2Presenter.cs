@@ -1,4 +1,5 @@
-﻿using Client.Common.Infrastructure;
+﻿using Client.Code.MiniGame2.Infrastructure.States;
+using Client.Common.Infrastructure;
 using Client.Common.Services.StateMachine;
 using Client.Common.Services.StateMachine.Global;
 using Client.Common.UI.Button;
@@ -22,8 +23,8 @@ namespace Client.Code.MiniGame2.UI
 
         private void HandleLoad(LoadButton button)
         {
-            if (button.Type == LoadButtonType.Hub)
-                _stateMachine.SwitchTo<HubLoadState>().Forget();
+            if (button.Type == LoadButtonType.Hub) 
+                _stateMachine.SwitchTo<MiniGame2ExitState>().Forget();
         }
     }
 }

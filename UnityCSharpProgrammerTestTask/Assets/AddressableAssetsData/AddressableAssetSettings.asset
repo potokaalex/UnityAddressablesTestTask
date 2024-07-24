@@ -15,9 +15,9 @@ MonoBehaviour:
   m_DefaultGroup: f8a8e7f3e43336b4b85a496f9465d0b3
   m_currentHash:
     serializedVersion: 2
-    Hash: 32870b0ce2b4ae8fedb0cdc2f3cba700
+    Hash: e25b35c2c94d3cdb417665cd69af09c8
   m_OptimizeCatalogSize: 0
-  m_BuildRemoteCatalog: 0
+  m_BuildRemoteCatalog: 1
   m_BundleLocalCatalog: 0
   m_CatalogRequestsTimeout: 0
   m_DisableCatalogUpdateOnStart: 0
@@ -35,10 +35,10 @@ MonoBehaviour:
   m_CheckForContentUpdateRestrictionsOption: 0
   m_MonoScriptBundleCustomNaming: 
   m_RemoteCatalogBuildPath:
-    m_Id: 
+    m_Id: <undefined>
   m_RemoteCatalogLoadPath:
-    m_Id: 
-  m_ContentStateBuildPathProfileVariableName: 
+    m_Id: <undefined>
+  m_ContentStateBuildPathProfileVariableName: <default settings path>
   m_CustomContentStateBuildPath: 
   m_ContentStateBuildPath: 
   m_BuildAddressablesWithPlayerBuild: 0
@@ -67,7 +67,7 @@ MonoBehaviour:
       - m_Id: 81fcbb5af7033ce49ac5cda995af8acf
         m_Value: ServerData/[BuildTarget]
       - m_Id: b133c0f86bf99ae4c8c842a1d22d76a9
-        m_Value: http://[PrivateIpAddress]:[HostingServicePort]
+        m_Value: https://63b2b099-7a2a-40eb-aa42-6f9fc83a7126.client-api.unity3dusercontent.com/client_api/v1/environments/production/buckets/2a2034c5-c825-4d92-a8e3-7aba33b01791/release_by_badge/latest/entry_by_path/content/?path=
     m_ProfileEntryNames:
     - m_Id: 0d49483d674e1b541923da35dc12b3c5
       m_Name: BuildTarget

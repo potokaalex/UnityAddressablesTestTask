@@ -484,6 +484,10 @@ PrefabInstance:
       propertyPath: Type
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 7560579440211331215, guid: dc804f25eb9cd244c976060b1744131d, type: 3}
+      propertyPath: Type
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 8031844052481277540, guid: dc804f25eb9cd244c976060b1744131d, type: 3}
       propertyPath: m_Name
       value: LoadMiniGame1Panel
@@ -593,6 +597,10 @@ PrefabInstance:
     - target: {fileID: 7453854962185662516, guid: dc804f25eb9cd244c976060b1744131d, type: 3}
       propertyPath: Type
       value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 7560579440211331215, guid: dc804f25eb9cd244c976060b1744131d, type: 3}
+      propertyPath: Type
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 8031844052481277540, guid: dc804f25eb9cd244c976060b1744131d, type: 3}
       propertyPath: m_Name

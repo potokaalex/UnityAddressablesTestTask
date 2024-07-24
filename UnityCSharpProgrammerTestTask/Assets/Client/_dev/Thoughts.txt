@@ -9,9 +9,11 @@ StateMachine используется как локальная машина и 
 
 порядок загрузки: (bootstrapLoader) -> projInstaller -> bootstrapInstaller -> projLoadState -> hubLoadState -> (local)HubState ->:
                   -> miniGame1LoadState -> (local)miniGame1State
+                  -> miniGame1UnloadState
                   -> miniGame2LoadState -> (local)miniGame2State ->:
                                         -> (local)miniGame2WinState
                                         -> (local)miniGame2DefeatState
+                  -> miniGame2UnloadState
                   -> (anyWay)projectExitState
 
 Для загрузки ассетов используются сервис AssetLoader, он загружает ассеты по меткам, ссылка на первую метку(Project) передаётся ему через projInstaller
@@ -35,6 +37,8 @@ StateMachine используется как локальная машина и 
 
 TODO:
     кнопки выгрузки!
+    обновить порядок сохранения прогресса!
+    баг popup!
     тесты работы
     тесты производительности
     рефакторинг:
