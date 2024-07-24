@@ -5,6 +5,7 @@ using Client.Common.Services.StateMachine.Global;
 using Client.Common.UI.Button;
 using Client.Common.UI.Button.Base;
 using Client.Common.UI.Button.Load;
+using Client.MiniGame1.Infrastructure.States;
 using Cysharp.Threading.Tasks;
 
 namespace Client.Code.MiniGame2.UI
@@ -24,7 +25,7 @@ namespace Client.Code.MiniGame2.UI
         private void HandleLoad(LoadButton button)
         {
             if (button.Type == LoadButtonType.Hub) 
-                _stateMachine.SwitchTo<MiniGame2ExitState>().Forget();
+                _stateMachine.SwitchTo<MiniGame2UnloadState>().Forget();
         }
     }
 }

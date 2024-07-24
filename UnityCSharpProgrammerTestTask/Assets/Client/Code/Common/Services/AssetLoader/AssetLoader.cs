@@ -35,6 +35,7 @@ namespace Client.Common.Services.AssetLoader
         {
             var labelReference = _config.Labels.Keys[label];
             _handles[labelReference].Release();
+            //_handles.Remove(labelReference);
         }
 
         public UniTask ClearAssets(AssetLabelType label) => AddressablesFixes.ClearDependencyCacheForKey(_config.Labels.Keys[label]).ToUniTask();

@@ -31,7 +31,7 @@ namespace Client.Hub.UI
             if (button.Type == UnloadButtonType.MiniGame1)
                 _stateMachine.SwitchTo<MiniGame1ClearState>().Forget();
             else if(button.Type == UnloadButtonType.MiniGame2)
-                _stateMachine.SwitchTo<MiniGame2LoadState>().Forget();
+                _stateMachine.SwitchTo<MiniGame2ClearState>().Forget();
         }
 
         private void HandleLoad(LoadButton button)
