@@ -50,7 +50,8 @@ namespace Client.Hub.Infrastructure.Installers
         private void BindLog()
         {
             Container.BindInterfacesTo<LogReceiver>().AsSingle();
-            Container.BindInterfacesTo<LoggerByPopup>().AsSingle();
+            Container.BindInterfacesAndSelfTo<LoggerByPopup>().AsSingle();
+            Container.BindInterfacesTo<LoggerByUnity>().AsSingle();
             Container.BindInterfacesTo<AddressablesCustomExceptionHandler>().AsSingle();
             Container.BindInterfacesTo<LogHandlersRegister>().AsSingle();
         }

@@ -37,7 +37,7 @@ namespace Client.Common.Services.AssetLoader
             var progress = Progress.Create(progressReceiver);
             try
             {
-                await Addressables.LoadAssetsAsync<object>(label, CallReceivers).ToUniTask(progress: progress);
+                await Addressables.LoadAssetsAsync<object>(label, CallReceivers, true).ToUniTask(progress: progress);
             }
             catch(Exception exception)
             {
