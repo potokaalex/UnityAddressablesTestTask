@@ -6,8 +6,9 @@ namespace Client.Common.Services.AssetLoader
     public interface IAssetLoader
     {
         UniTask<bool> LoadProject();
-        UniTask<bool> LoadAssets(AssetLabel label, Action<float> progressReceiver = null);
-        void UnloadAssets(AssetLabel label);
+        UniTask<bool> LoadAssets(AssetLabelType label, Action<float> progressReceiver = null);
+        void UnloadAssets(AssetLabelType label);
+        UniTask ClearAssets(AssetLabelType label);
         void RegisterReceiver(IAssetReceiverBase receiver);
         void UnRegisterReceiver(IAssetReceiverBase receiver);
     }

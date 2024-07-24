@@ -51,7 +51,7 @@ namespace Client.Code.MiniGame2.Infrastructure.States
             await _sceneLoader.LoadSceneAsync(SceneName.MiniGame2, f => loadingWindow.SetProgress(f, 0, 1 / 3f));
 
         private async UniTask<bool> LoadAssets(LoadingWindow loadingWindow) =>
-            await _assetLoader.LoadAssets(AssetLabel.MiniGame2, f => loadingWindow.SetProgress(f, 1 / 3f, 2 / 3f));
+            await _assetLoader.LoadAssets(AssetLabelType.MiniGame2, f => loadingWindow.SetProgress(f, 1 / 3f, 2 / 3f));
 
         private async UniTask LoadProgress(LoadingWindow loadingWindow) =>
             await _progressLoader.Load(f => loadingWindow.SetProgress(f, 2 / 3f, 1));

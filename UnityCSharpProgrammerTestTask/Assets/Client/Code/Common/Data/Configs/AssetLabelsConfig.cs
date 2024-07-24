@@ -9,6 +9,6 @@ namespace Client.Common.Data.Configs
     [CreateAssetMenu(menuName = "Configs/AssetLabels", fileName = "AssetLabelsConfig", order = 0)]
     public class AssetLabelsConfig : SerializedScriptableObject
     {
-        public Dictionary<AssetLabel, AssetLabelReference> Keys;
+        public Dictionary<AssetLabelType, AssetLabelReference> Keys;
     }
 }

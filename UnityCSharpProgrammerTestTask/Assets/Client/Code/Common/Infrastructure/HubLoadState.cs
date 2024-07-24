@@ -40,6 +40,6 @@ namespace Client.Common.Infrastructure
             await _sceneLoader.LoadSceneAsync(SceneName.Hub, p => loadingWindow.SetProgress(p, 0, 0.5f));
 
         private async UniTask LoadAssets(LoadingWindow loadingWindow) =>
-            await _assetLoader.LoadAssets(AssetLabel.Hub, p => loadingWindow.SetProgress(p, 0.5f, 1));
+            await _assetLoader.LoadAssets(AssetLabelType.Hub, p => loadingWindow.SetProgress(p, 0.5f, 1));
     }
 }

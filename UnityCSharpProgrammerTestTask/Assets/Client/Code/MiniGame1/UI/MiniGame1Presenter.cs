@@ -24,7 +24,7 @@ namespace Client.MiniGame1.UI
         private void HandleLoad(LoadButton button)
         {
             if (button.Type == LoadButtonType.Hub)
-                _stateMachine.SwitchTo<MiniGame1ExitState>().Forget();
+                _stateMachine.SwitchTo<MiniGame1UnloadState>().Forget();
         }
     }
 }

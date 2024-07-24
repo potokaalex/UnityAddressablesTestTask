@@ -4,12 +4,14 @@ using Client.Common.Data.Configs;
 using Client.Common.Services.Logger.Base;
 using Cysharp.Threading.Tasks;
 using UnityEngine.AddressableAssets;
+using UnityEngine.ResourceManagement.AsyncOperations;
 
 namespace Client.Common.Services.AssetLoader
 {
     public class AssetLoader : IAssetLoader, IAssetReceiver<ProjectConfig>
     {
         private readonly Dictionary<IAssetReceiverBase, Type> _receivers = new();
+        private readonly Dictionary<AssetLabelReference, AsyncOperationHandle<IList<object>>> _handles = new();
         private readonly AssetLabelReference _projectLabel;
         private readonly ILogReceiver _logReceiver;
         private ProjectConfig _config;
@@ -20,17 +22,22 @@ namespace Client.Common.Services.AssetLoader
             _logReceiver = logReceiver;
         }
 
-        public async UniTask<bool> LoadProject() => await LoadAssets(_projectLabel);
+        public async UniTask<bool> LoadProject()
+        {
+            await Addressables.InitializeAsync(false);
+            return await LoadAssets(_projectLabel);
+        }
 
-        //BUG dont update progressReceiver!
-        public async UniTask<bool> LoadAssets(AssetLabel label, Action<float> progressReceiver = null) =>
+        public async UniTask<bool> LoadAssets(AssetLabelType label, Action<float> progressReceiver = null) =>
             await LoadAssets(_config.Labels.Keys[label], progressReceiver);
 
-        public void UnloadAssets(AssetLabel label)
+        public void UnloadAssets(AssetLabelType label)
         {
-            //Addressables.rel
-            Addressables.ClearDependencyCacheAsync(_config.Labels.Keys[label]);
+            var labelReference = _config.Labels.Keys[label];
+            _handles[labelReference].Release();
         }
+
+        public UniTask ClearAssets(AssetLabelType label) => AddressablesFixes.ClearDependencyCacheForKey(_config.Labels.Keys[label]).ToUniTask();
 
         public void RegisterReceiver(IAssetReceiverBase receiver) => _receivers[receiver] = GetGenericType(receiver);
 
@@ -43,22 +50,24 @@ namespace Client.Common.Services.AssetLoader
             var progress = Progress.Create(progressReceiver);
             try
             {
-                await Addressables.LoadAssetsAsync<object>(label, CallReceivers, true).ToUniTask(progress: progress);
+                var handle = Addressables.LoadAssetsAsync<object>(label, CallReceivers, true);
+                _handles[label] = handle;
+                await handle.ToUniTask(progress: progress); //BUG dont update progress!
             }
-            catch(Exception exception)
+            catch (Exception exception)
             {
-                _logReceiver.Log(new LogData {Message = exception.Message});
+                _logReceiver.Log(new LogData { Message = exception.Message });
                 return false;
             }
 
             return true;
         }
-        
+
         private void CallReceivers(object asset)
         {
-            if(asset == null)
+            if (asset == null)
                 return;
-            
+
             foreach (var receiver in _receivers)
             {
                 if (asset.GetType() == receiver.Value)

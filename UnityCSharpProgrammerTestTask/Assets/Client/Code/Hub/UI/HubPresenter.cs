@@ -29,7 +29,7 @@ namespace Client.Hub.UI
         private void HandleUnload(UnloadButton button)
         {
             if (button.Type == UnloadButtonType.MiniGame1)
-                _stateMachine.SwitchTo<MiniGame1UnloadState>().Forget();
+                _stateMachine.SwitchTo<MiniGame1ClearState>().Forget();
             else if(button.Type == UnloadButtonType.MiniGame2)
                 _stateMachine.SwitchTo<MiniGame2LoadState>().Forget();
         }
